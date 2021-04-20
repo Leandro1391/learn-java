@@ -9,50 +9,28 @@
  * @author leandro
  */
 public class HolaMundo {
-    public static void main(String args[]){
-//        Define the variable int or literal
-         int myVariableInteger = 10;
-         System.out.println("Variable Integer: " + myVariableInteger);
-         
-//         Modificamos el valor de la variable literal
-         myVariableInteger = 5;
-         System.out.println("Variable Integer modified: " + myVariableInteger);
-         
-         // String is a class in Java, not Type Primitive
-         String  myVariableString = "Greeteings";
-         System.out.println(myVariableString);
-         
-         //We modified the string variable
-          myVariableString = "Goodbye";
-         System.out.println(myVariableString);
-         
-         // Since Java 10  we can use  the reserved ky VAR, it's will inference the variable, what's mean this?
-         // when I put  a variable with value assigment like 10 -> the compile will interprete the varieble type in tshi case will be a int
-         
-         //var - Inferencia de tipo en Java
-         
-         //En este caso va inferir el tipo de dato según el dato que se asigne la variable en el lado derecho
-         var myVariableInteger2 = 15;
-         System.out.println("Variable Inference Int is: " + myVariableInteger2);
-         
-         //Literal type string
-         var myVariableString2 = "myVariableString2";
-         System.out.println("Variable Inference String is: " + myVariableString2);
-         
-         // with soutv + TAB autmatic complete the follow line down
-        System.out.println("myVariableString2 = " + myVariableString2); 
+
+    public static void main(String args[]) {
+        var user = "Giovanni";
+        var title = "Ingenieri";
+
+        var union = title + " " + user;
+        System.out.println("union = " + union);
+
+        var i = 3;
+        var j = 4;
         
-        /*The reserved key var only use insede the methods, out of them  it dosen't work*/
+        //Sum of numbers
+        System.out.println(i + j);
+        System.out.println(i + j + " " +user);
         
-//        The first character in variable must be in minus for standard conventions
-        var miVariable = 1;
-                
-//     we don't use  specialcharecter  (only $ or _)
-        var _miVariable = 2;
-        var $miVariable = 3;
+        //Interesting example -> context string
+        System.out.println(user  + i + j);
         
-        //var áVariable = 10; Please never use it
-        //var  #miVariable = 2; never with special character
-         
+        //Iwth parentheses up the priority evaluation level, in this case first sumaand then string
+        System.out.println(user  + (i + j));
+        
+
+        // ALf + Shift + F -> format the code in the IDE
     }
 }
