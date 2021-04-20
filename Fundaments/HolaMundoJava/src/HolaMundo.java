@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,13 +14,18 @@
 public class HolaMundo {
 
     public static void main(String args[]) {
-        var name = "Mica";
-
-        System.out.println("New line: \n" + name);
-        System.out.println("Tab: \t" + name);
-        System.out.println("Retroceso or Backskpace: \b\b" + name);
-        System.out.println("Comilla simple or single quote \'" + name + "\'");
-        System.out.println("Comilla doble or double quotes: \"" + name + "\"");
+        System.out.println("Write your name:");
+        //Class Scanner is from Java
+        Scanner console = new Scanner(System.in);
         
+        //nextLine waits the user input word
+        var user = console.nextLine();
+        System.out.println("user = " + user);
+        
+        System.out.println("Title:");
+        var title = console.nextLine();
+        System.out.println("Result = " + title + " " + user);
+        
+
     }
 }
