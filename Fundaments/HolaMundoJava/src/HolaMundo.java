@@ -10,13 +10,13 @@
  */
 public class HolaMundo {
     public static void main(String args[]){
-//        Define the variable
+//        Define the variable int or literal
          int myVariableInteger = 10;
-         System.out.println(myVariableInteger);
+         System.out.println("Variable Integer: " + myVariableInteger);
          
-//         Modificamos el valor de la variable
+//         Modificamos el valor de la variable literal
          myVariableInteger = 5;
-         System.out.println(myVariableInteger);
+         System.out.println("Variable Integer modified: " + myVariableInteger);
          
          // String is a class in Java, not Type Primitive
          String  myVariableString = "Greeteings";
@@ -26,6 +26,23 @@ public class HolaMundo {
           myVariableString = "Goodbye";
          System.out.println(myVariableString);
          
+         // Since Java 10  we can use  the reserved ky VAR, it's will inference the variable, what's mean this?
+         // when I put  a variable with value assigment like 10 -> the compile will interprete the varieble type in tshi case will be a int
+         
+         //var - Inferencia de tipo en Java
+         
+         //En este caso va inferir el tipo de dato según el dato que se asigne la variable en el lado derecho
+         var myVariableInteger2 = 15;
+         System.out.println("Variable Inference Int is: " + myVariableInteger2);
+         
+         //Literal type string
+         var myVariableString2 = "myVariableString2";
+         System.out.println("Variable Inference String is: " + myVariableString2);
+         
+         // with soutv + TAB autmatic complete the follow line down
+        System.out.println("myVariableString2 = " + myVariableString2); 
+        
+        /*The reserved key var only use insede the methods, out of them  it dosen't work*/
          
     }
 }
