@@ -11,26 +11,13 @@
 public class HolaMundo {
 
     public static void main(String args[]) {
-        var user = "Giovanni";
-        var title = "Ingenieri";
+        var name = "Mica";
 
-        var union = title + " " + user;
-        System.out.println("union = " + union);
-
-        var i = 3;
-        var j = 4;
+        System.out.println("New line: \n" + name);
+        System.out.println("Tab: \t" + name);
+        System.out.println("Retroceso or Backskpace: \b\b" + name);
+        System.out.println("Comilla simple or single quote \'" + name + "\'");
+        System.out.println("Comilla doble or double quotes: \"" + name + "\"");
         
-        //Sum of numbers
-        System.out.println(i + j);
-        System.out.println(i + j + " " +user);
-        
-        //Interesting example -> context string
-        System.out.println(user  + i + j);
-        
-        //Iwth parentheses up the priority evaluation level, in this case first sumaand then string
-        System.out.println(user  + (i + j));
-        
-
-        // ALf + Shift + F -> format the code in the IDE
     }
 }
