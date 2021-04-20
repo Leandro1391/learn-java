@@ -15,15 +15,18 @@ public class HolaMundo {
 
     public static void main(String args[]) {
         
-         Scanner console = new Scanner(System.in);
-         
-         System.out.println("Input the title:");
-        var title = console.nextLine();
-         
-         System.out.println("Input the author:");
-         var author = console.nextLine();
-         
-         System.out.println( title + "  was written by " + author);      
+        /* Architectura del procesador el adecuado en mi caso en long porque tengo AMD64
+            tipos primitivos enteros: byte (8bits), short (16bits), int (32bits), long (64bits)
+        */
+        
+        byte numberByte = 10;
+        System.out.println("Minimum value byte: " + Byte.MIN_VALUE);
+        System.out.println("Maximun value byte: " + Byte.MAX_VALUE);
+        
+        //  Explicit Convertion bun carefull  always watch the range type
+        byte numberByteMax = (byte)129;
+        System.out.println(numberByteMax);
+        
         
     }
 }
