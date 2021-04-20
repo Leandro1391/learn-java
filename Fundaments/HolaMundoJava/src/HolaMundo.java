@@ -43,6 +43,16 @@ public class HolaMundo {
         System.out.println("myVariableString2 = " + myVariableString2); 
         
         /*The reserved key var only use insede the methods, out of them  it dosen't work*/
+        
+//        The first character in variable must be in minus for standard conventions
+        var miVariable = 1;
+                
+//     we don't use  specialcharecter  (only $ or _)
+        var _miVariable = 2;
+        var $miVariable = 3;
+        
+        //var áVariable = 10; Please never use it
+        //var  #miVariable = 2; never with special character
          
     }
 }
