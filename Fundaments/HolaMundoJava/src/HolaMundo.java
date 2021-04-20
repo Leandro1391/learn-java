@@ -14,18 +14,16 @@ import java.util.Scanner;
 public class HolaMundo {
 
     public static void main(String args[]) {
-        System.out.println("Write your name:");
-        //Class Scanner is from Java
-        Scanner console = new Scanner(System.in);
         
-        //nextLine waits the user input word
-        var user = console.nextLine();
-        System.out.println("user = " + user);
-        
-        System.out.println("Title:");
+         Scanner console = new Scanner(System.in);
+         
+         System.out.println("Input the title:");
         var title = console.nextLine();
-        System.out.println("Result = " + title + " " + user);
+         
+         System.out.println("Input the author:");
+         var author = console.nextLine();
+         
+         System.out.println( title + "  was written by " + author);      
         
-
     }
 }
