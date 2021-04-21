@@ -17,53 +17,31 @@ public class HolaMundo {
         // Todo estas clases están contenidas en la clase Java.lang
 
         /* Architectura del procesador el adecuado en mi caso en long porque tengo AMD64
-            tipos primitivos enteros: byte (8bits), short (16bits), int (32bits), long (64bits)
+            tipos primitivos de tipo flotante: float(32bits) y double (64bits)
          */
-        byte numberByte = 10;
-        System.out.println("numberByte = " + numberByte);
-
-        //Class Byte
-        System.out.println("Minimum value byte: " + Byte.MIN_VALUE);
-        System.out.println("Maximun value byte: " + Byte.MAX_VALUE);
-
-        //  Explicit Convertion bun carefull  always watch the range type, los precission
-        byte numberByteMax = (byte) 129;
-        System.out.println(numberByteMax);
-
-        short numberShort = 200;
-        System.out.println("numberShort = " + numberShort);
-
-        //Class Short
-        System.out.println("Minimun value short: " + Short.MIN_VALUE);
-        System.out.println("Maximun value short: " + Short.MAX_VALUE);
         
-        //El usuario se hará cargo de la pérdida de precición en una la conversión explícita
-         short numberOverloadShort = (short) 32768;
-        System.out.println("numberOverload = " + numberOverloadShort);
+        float numberFLoat = 10.0f;
+        System.out.println("numberFLoat = " + numberFLoat);
+        float numberFLoat1 = (float)22.2;
+        System.out.println("numberFLoat1 = " + numberFLoat1);
         
-        int numberInt = 10;
-        System.out.println("numberInt = " + numberInt);
+        System.out.println("Minimun vlaue type float: " + Float.MIN_VALUE);
+        System.out.println("Maximun vlaue type float: " + Float.MAX_VALUE);
         
-        System.out.println("Minimun value inte: " + Integer.MIN_VALUE);
-        System.out.println("Maximun value int: " + Integer.MAX_VALUE);
+        //explicit convertions
+        float numberFLoatOverload = (float)3.4028235E38;
+        System.out.println("numberFLoatOverload = " + numberFLoatOverload);
+        float numberFLoatOverload2 = (float)3.4028236E38;
+        System.out.println("numberFLoatOverload2 = " + numberFLoatOverload2);
         
-        // this is a spacial case, the literal default is int, that's is the problem so we need convert to long
-        int numberIntOverload = (int)2147483648L; // with L convert to long 32 to 64
-        System.out.println("numberIntOverload = " + numberIntOverload);
-        //int numberIntOverload = 2147483648L; // Error
+        double numberDouble = 10;
+        System.out.println("numberDouble = " + numberDouble);
         
+        System.out.println("Minimun vlaue type double: " + Double.MIN_VALUE);
+        System.out.println("Maximun vlaue type double: " + Double.MAX_VALUE);
         
-       long numberLong = 10;
-        System.out.println("numberLong = " + numberLong);
-        System.out.println("Minimun value long: " + Long.MIN_VALUE);
-        System.out.println("Maximun value long: " + Long.MAX_VALUE);
+        //The maximal is type Double
         
-        long numberLongOverload =  9223372036854775807L;
-        System.out.println("numberLongOverload = " + numberLongOverload);
-        
-        long numberLongOverload2 =  (long)9223372036854775808D;
-        // long numberLongOverload23=  (long)9223372036854775808L;
-        long numberLongOverload23=  (long)9223372036854775808D;
         
     }
 }
