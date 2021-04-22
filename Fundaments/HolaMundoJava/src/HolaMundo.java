@@ -14,46 +14,21 @@ public class HolaMundo {
 
     public static void main(String args[]) {
         
-        // char value store 16 bits like short
-        char myCharacter = 'a';
-        System.out.println("myCharacter = " + myCharacter);
+        // defuale value in boolean is false
+        boolean varBoolean = false;
+        System.out.println("varBoolean = " + varBoolean);
         
-        char variableChar = '\u0021';
-        System.out.println("variableChar = " + variableChar);
+      if(varBoolean)
+            System.out.println("The flag is true");
+      else
+            System.out.println("The flag is false");
         
-        char varCharDecimal = 33;
-        System.out.println("carCharDecimal = " + varCharDecimal);
-        
-        char varCharSymbol = '!';
-        System.out.println("varCharSymbol = " + varCharSymbol);
-        
-        //With declaration var -  inference
-        var varChar0 = '\u0021';
-        System.out.println("varChar0 = " + varChar0);
-        
-        //in this case will not be to char, inferece will take to int
-        var varCharDecimal1 = 33;
-        System.out.println("varCharDecimal1 = " + varCharDecimal1);
-        
-        //var char explicit parse
-        var varCharDecimalExplicitParse = (char) 33;
-        System.out.println("varCharDecimalExplicitParse = " + varCharDecimalExplicitParse);
-        
-        var varCharSymbol2= '!';
-        System.out.println("varCharSymbol2 = " + varCharSymbol2);
-        
-        //example with int
-        int variableIntegerSymbol = '!';
-        System.out.println("variableIntegerSymbol = " + variableIntegerSymbol);
-        
-        int  letter = 'a';
-        System.out.println("letter = " + letter);
-        
-        char letter2 = 97;
-        System.out.println("letter2 = " + letter2);
-        
-        int  letterMayus = 'A';
-        System.out.println("letterMayus = " + letterMayus);
+      var age = 30;
+//      var isAdult = age >= 18;
+        if (age >= 18) 
+            System.out.println("You are of legal age" );
+        else
+        System.out.println("You are not of legal age");
       
     }
 }
