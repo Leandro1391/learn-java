@@ -24,8 +24,19 @@ public class HolaMundo {
         
         //Ask a value
         var console = new Scanner(System.in);
-        System.out.println("Give a vlue");
-        age = Integer.parseInt(console.nextLine());
-        System.out.println("age = " + age);
+//        System.out.println("Give a vlue");
+//        age = Integer.parseInt(console.nextLine());
+//        System.out.println("age = " + age);
+        
+        var ageText = String.valueOf(10);
+        System.out.println("ageText = " + ageText);
+        
+        //Char -> explicit convertion type String to Char
+        var varChar = "hola".charAt(0);
+        System.out.println("varChar = " + varChar);
+        
+        System.out.println("Give one char");
+        varChar =  console.nextLine().charAt(0) ;
+        System.out.println("varChar = " + varChar);
     }
 }
