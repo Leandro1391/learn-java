@@ -14,29 +14,30 @@ public class HolaMundo {
 
     public static void main(String args[]) {
         
-        //Convertion string type to int type (redundance type word)
-        var age = Integer.parseInt( "20");
-//        var edad = "20";
-        System.out.println("edad = " + (age + 1));
-      
-        var valuePI = Double.parseDouble("3.1416");
-        System.out.println("valuePI = " + valuePI);
+        /*Se solicita capturar la siguiente información de una tienda de libros:
+        nombre (String)
+        id (int)
+        precio (double)
+        envioGratuito (boolean)*/
         
-        //Ask a value
-        var console = new Scanner(System.in);
-//        System.out.println("Give a vlue");
-//        age = Integer.parseInt(console.nextLine());
-//        System.out.println("age = " + age);
+        var  console = new Scanner(System.in);
         
-        var ageText = String.valueOf(10);
-        System.out.println("ageText = " + ageText);
+        System.out.println("Give the name: ");
+        var name =  console.nextLine();
         
-        //Char -> explicit convertion type String to Char
-        var varChar = "hola".charAt(0);
-        System.out.println("varChar = " + varChar);
+        System.out.println("Give Id");
+        var id = Integer.parseInt(console.nextLine());
         
-        System.out.println("Give one char");
-        varChar =  console.nextLine().charAt(0) ;
-        System.out.println("varChar = " + varChar);
+        System.out.println("Give price");
+        var price = Double.parseDouble(console.nextLine());
+     
+        System.out.println("Give Shipment free");
+        var shipment = Boolean.parseBoolean(console.nextLine());
+        
+        System.out.println("name: " +  name + " - #id:" + id);
+        
+        System.out.println("Price: $"  + price);
+        System.out.println("Send shipment free: " + shipment);
+       
     }
 }
