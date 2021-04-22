@@ -14,21 +14,18 @@ public class HolaMundo {
 
     public static void main(String args[]) {
         
-        // defuale value in boolean is false
-        boolean varBoolean = false;
-        System.out.println("varBoolean = " + varBoolean);
-        
-      if(varBoolean)
-            System.out.println("The flag is true");
-      else
-            System.out.println("The flag is false");
-        
-      var age = 30;
-//      var isAdult = age >= 18;
-        if (age >= 18) 
-            System.out.println("You are of legal age" );
-        else
-        System.out.println("You are not of legal age");
+        //Convertion string type to int type (redundance type word)
+        var age = Integer.parseInt( "20");
+//        var edad = "20";
+        System.out.println("edad = " + (age + 1));
       
+        var valuePI = Double.parseDouble("3.1416");
+        System.out.println("valuePI = " + valuePI);
+        
+        //Ask a value
+        var console = new Scanner(System.in);
+        System.out.println("Give a vlue");
+        age = Integer.parseInt(console.nextLine());
+        System.out.println("age = " + age);
     }
 }
