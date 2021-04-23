@@ -11,41 +11,30 @@ import java.util.Scanner;
  * @author leandro
  */
 public class HolaMundo {
-      
+
       public static void main(String args[]) {
-            
-            var a = 3;
-            var b =2;
-            
-            var c = (a == b);
-            System.out.println("c = " + c);
-            
-            var d = a != b;
-            System.out.println("d = " + d);
-            
-            var chain = "Hello";
-            var chain2 = "Hello";
-            var e = chain == chain2;// compare memeory reference of the two objects variables(string is a object )
-            System.out.println("e = " + e);
-            
-            var f = chain.equals(chain2); //Verifica si el contenido de cadenas es el mismo
-            System.out.println("f = " + f);
-            
-            //Relational Operators
-            var g = a >= b;
-            System.out.println("g = " + g);
-            
-            if (a % 2 == 0)
-                  System.out.println("Es numero par ");
-            else  
-                  System.out.println("Es numero impar");
-            
-            var age = 15;
-            var adult = 18;
-            if (age >= adult) 
-                  System.out.println("Is eldest");
-           else
-            System.out.println("Is not eldest");
-                  
+
+            //Conditional Operators
+            var a = 5;
+            var minValue = 0;
+            var maxValue = 10;
+
+            var result = a >= 0 && a <= 10;
+            if (result) {
+                  System.out.println("inside of range");
+            } else {
+                  System.out.println("Out of range");
+            }
+
+//            if (a > = 0 && a <= 10)
+//                  System.out.println("a is  in the range between 0 and 10");
+            var holidays = true;
+            var dayRest = false;
+
+            if (holidays || dayRest) {
+                  System.out.println("the father can to asist son's game");
+            } else {
+                  System.out.println("the father is bussy");
             }
       }
+}
