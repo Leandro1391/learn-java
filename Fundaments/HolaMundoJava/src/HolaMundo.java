@@ -13,43 +13,23 @@ import java.util.Scanner;
 public class HolaMundo {
       
       public static void main(String args[]) {
-            //Numbers
-            var a = 3;
-            var b = -a;
-            System.out.println("a = " + a);
-            System.out.println("b = " + b);
             
-            //Boolean
-            var c = true;
-            var d = !c;       //negation
+            var a = 3;
+            var b =2;
+            
+            var c = (a == b);
             System.out.println("c = " + c);
+            
+            var d = a != b;
             System.out.println("d = " + d);
             
-            //increment
-            //1.preincrement (symbole goes before  of the variable)
-            var e = 3;
-            var f = ++e; //first increment the variable and later use his value
+            var chain = "Hello";
+            var chain2 = "Hello";
+            var e = chain == chain2;// compare memeory reference of the two objects variables(string is a object )
             System.out.println("e = " + e);
+            
+            var f = chain.equals(chain2); //Verifica si el contenido de cadenas es el mismo
             System.out.println("f = " + f);
-            
-            //2.postincrement (symbol goes after the variable)
-            var g = 5;
-            var h = g++; //h = 5
-            System.out.println("g = " + g); //g = 6 increment
-            System.out.println("h = " + h); // h=5
-            
-            //decrement
-            //1.predecrement
-            var i = 2;
-            var j = --i;
-            System.out.println("i = " + i);
-            System.out.println("j = " + j);
-            
-            //2.Postdecrement
-            var k =4;
-            var l= k--; // first use the variable value and stay pending th decrement
-            System.out.println("k = " + k); //has pending one decrement
-            System.out.println("l = " + l); 
             
       }
 }
