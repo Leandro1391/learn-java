@@ -14,14 +14,22 @@ public class HolaMundo {
 
       public static void main(String args[]) {
 
-            var result = (3 > 2) ? "true" : "false";
+            //Operator Priority
+            
+            //the compllation read left to right
+            var x = 5;
+            var y = 10;
+            var z = ++x + y--; 
+            
+            System.out.println("x = " + x);
+            System.out.println("y = " + y); //9 because the decremetn is post secuence execution
+            System.out.println("z = " + z);
+            
+            // Si usamos parentesis podemos cambiar la prioridad
+            var result = 4 + 5 * 6 / 3; //  4 + ((5*6) / 3)
             System.out.println("result = " + result);
             
-            // Solamente se usan si son expresiones sencillas el operador ternario
-            
-            var number = 5;
-            result = (number % 2 == 0) ? "Es par" : "Es impar";
+            result = ( 4 + 5 ) * 6 / 3; //  54 / 3 = 18
             System.out.println("result = " + result);
-
       }
 }
