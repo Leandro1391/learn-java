@@ -14,30 +14,29 @@ public class HolaMundo {
 
     public static void main(String args[]) {
         
-        /*Se solicita capturar la siguiente información de una tienda de libros:
-        nombre (String)
-        id (int)
-        precio (double)
-        envioGratuito (boolean)*/
+        int  a=3, b=2;
+        var result = a + b;
+        System.out.println("result  sum= " + result);
         
-        var  console = new Scanner(System.in);
+        result = a - b;
+        System.out.println(" result minus= " +  result);
         
-        System.out.println("Give the name: ");
-        var name =  console.nextLine();
+        result = a * b;
+        System.out.println("result multiplicate= " + result);
         
-        System.out.println("Give Id");
-        var id = Integer.parseInt(console.nextLine());
-        
-        System.out.println("Give price");
-        var price = Double.parseDouble(console.nextLine());
-     
-        System.out.println("Give Shipment free");
-        var shipment = Boolean.parseBoolean(console.nextLine());
-        
-        System.out.println("name: " +  name + " - #id:" + id);
-        
-        System.out.println("Price: $"  + price);
-        System.out.println("Send shipment free: " + shipment);
+//        result =  a / b; result is integer
+//            var result2 = 3F / b;
+            var result2 = 3D / b;
+        System.out.println("result div = " + result2);
        
+        // Obtiene el resto de la division
+        result = a % b;
+        System.out.println("result2 = " + result);
+        
+        //is par or impar
+        if(b % 2 == 0)
+            System.out.println("Es numero par");
+        else
+            System.out.println("Es numero impar");
     }
 }
