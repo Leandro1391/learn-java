@@ -14,29 +14,19 @@ public class HolaMundo {
 
     public static void main(String args[]) {
         
-        int  a=3, b=2;
-        var result = a + b;
-        System.out.println("result  sum= " + result);
+       int a = 3, b=2;
+       int c = a + 5 -b;
+        System.out.println("c = " + c);
         
-        result = a - b;
-        System.out.println(" result minus= " +  result);
+        a += 1; //a = a + 1;
+        System.out.println("a = " + a);
         
-        result = a * b;
-        System.out.println("result multiplicate= " + result);
+        a += 3; //a = a + 3
+        System.out.println("a = " + a);
         
-//        result =  a / b; result is integer
-//            var result2 = 3F / b;
-            var result2 = 3D / b;
-        System.out.println("result div = " + result2);
-       
-        // Obtiene el resto de la division
-        result = a % b;
-        System.out.println("result2 = " + result);
+        a -=2; // a= a -2;
+        System.out.println("a = " + a);
         
-        //is par or impar
-        if(b % 2 == 0)
-            System.out.println("Es numero par");
-        else
-            System.out.println("Es numero impar");
+        // *= /=  *= %=
     }
 }
