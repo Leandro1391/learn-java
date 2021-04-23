@@ -31,5 +31,21 @@ public class HolaMundo {
             var f = chain.equals(chain2); //Verifica si el contenido de cadenas es el mismo
             System.out.println("f = " + f);
             
+            //Relational Operators
+            var g = a >= b;
+            System.out.println("g = " + g);
+            
+            if (a % 2 == 0)
+                  System.out.println("Es numero par ");
+            else  
+                  System.out.println("Es numero impar");
+            
+            var age = 15;
+            var adult = 18;
+            if (age >= adult) 
+                  System.out.println("Is eldest");
+           else
+            System.out.println("Is not eldest");
+                  
+            }
       }
-}
