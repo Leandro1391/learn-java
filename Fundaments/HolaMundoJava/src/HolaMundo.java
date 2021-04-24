@@ -14,36 +14,29 @@ public class HolaMundo {
 
       public static void main(String args[]) {
 
+            var nota = 0;
+            var ok = 'n';
             var console = new Scanner(System.in);
-            int mounth;
-            var season = "Unknow season";
 
-            System.out.println("Press a number");
-            mounth = Integer.parseInt( console.nextLine());
-            switch (mounth) {
-                  case 1:
-                  case 2:
-                  case 12:
-                        season = "Winter";
-                        break;
-                  case 3:
-                  case 4:
-                  case 5:
-                        season = "Spring";
-                        break;
-                  case 6:
-                  case 7:
-                  case 8:
-                        season = "Summer";
-                        break;
-                  case 9:
-                  case 10:
-                  case 11:
-                        season = "Autumn";
-                        break;
-                  default:
-                        season = "Wrong number";
-            }
-            System.out.println("season = " + season);
+            do {
+                  System.out.println("Proporciona un valor entre 0 y 10: ");
+                  nota = Integer.parseInt(console.nextLine());
+                  if (nota >= 9 && nota <= 10) {
+                        System.out.println("A");
+                  } else if (nota >= 8 && nota < 9) {
+                        System.out.println("B");
+                  } else if (nota >= 7 && nota < 8) {
+                        System.out.println("C");
+                  } else if (nota >= 6 && nota < 7) {
+                        System.out.println("D");
+                  } else if (nota >= 0 && nota < 6) {
+                        System.out.println("F");
+                  } else {
+                        System.out.println("Valor desconocido");
+                  }
+                  System.out.println("¿Desea continuar?  s/n");
+                  ok = console.nextLine().charAt(0);
+            } while (nota <= 0 || nota > 10 || ok == 's');
+
       }
 }
