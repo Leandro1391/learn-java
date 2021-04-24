@@ -14,19 +14,25 @@ public class HolaMundo {
 
       public static void main(String args[]) {
 
-            var alto =0;
-            var ancho = 0;
-            
+            var numero1 = 0;
+            var numero2 = 0;
+
             var console = new Scanner(System.in);
-            
-            System.out.println("Proporciona el alto: ");
-            alto = Integer.parseInt(console.nextLine());
-            
-            System.out.println("Proporciona el ancho: ");
-            ancho = Integer.parseInt(console.nextLine());
-                    
-            System.out.println("Area: " + alto * ancho);
-            System.out.println("Perimetro: " + 2*(alto + ancho));
-            
+
+            System.out.println("Proprociona el numero1: ");
+            numero1 = Integer.parseInt(console.nextLine());
+
+            System.out.println("Proporciona el numero2: ");
+            numero2 = Integer.parseInt(console.nextLine());
+            System.out.println("El numero mayor es: ");
+            System.out.println(String.valueOf( numero1>numero2 ? numero1 : numero2==numero1 ? "Error: Los numeros son iguales" : numero2));
+
+//            if (numero1 > numero2) {
+//                  System.out.println("El numero mayor es: " + numero1);
+//            } else if (numero1 == numero2) {
+//                  System.out.println("Los numeros son iguales");
+//            } else {
+//                  System.out.println("El numeros mayor es: " + numero2);
+//            }
       }
 }
