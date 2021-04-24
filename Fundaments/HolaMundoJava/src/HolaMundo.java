@@ -14,22 +14,19 @@ public class HolaMundo {
 
       public static void main(String args[]) {
 
-            //Operator Priority
+            var alto =0;
+            var ancho = 0;
             
-            //the compllation read left to right
-            var x = 5;
-            var y = 10;
-            var z = ++x + y--; 
+            var console = new Scanner(System.in);
             
-            System.out.println("x = " + x);
-            System.out.println("y = " + y); //9 because the decremetn is post secuence execution
-            System.out.println("z = " + z);
+            System.out.println("Proporciona el alto: ");
+            alto = Integer.parseInt(console.nextLine());
             
-            // Si usamos parentesis podemos cambiar la prioridad
-            var result = 4 + 5 * 6 / 3; //  4 + ((5*6) / 3)
-            System.out.println("result = " + result);
+            System.out.println("Proporciona el ancho: ");
+            ancho = Integer.parseInt(console.nextLine());
+                    
+            System.out.println("Area: " + alto * ancho);
+            System.out.println("Perimetro: " + 2*(alto + ancho));
             
-            result = ( 4 + 5 ) * 6 / 3; //  54 / 3 = 18
-            System.out.println("result = " + result);
       }
 }
