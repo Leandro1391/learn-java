@@ -14,31 +14,33 @@ public class HolaMundo {
 
       public static void main(String args[]) {
 
-            //Sentece if  else
-            var condition = true;
+            var mounth = 0;
+            var console = new Scanner(System.in);
+            var season = "Season unknow";
+            var ok = 'n';
 
-            if (condition) {
-                  System.out.println("True condition");
-                  System.out.println("New Line");
-            } else {
-                  System.out.println("False condition");
-            }
-            
-            var number = 4;
-            var numberText = "Unknow number";
-            
-            if (number == 1) {
-                  numberText = "Number one";
-            } else if (number == 2){
-                  numberText = "Number two";
-            }else if (number == 3) {
-                  numberText = "Number three";
-            } else if (number == 4) {
-                  numberText = "Number four";
-            } else {
-                  numberText = "Number not found";
-            }
-            
-            System.out.println("numberText = " + numberText);
+            do {
+                  System.out.println("Press the number between 1 to 12  for know the season");
+                  mounth = Integer.parseInt(console.nextLine());
+
+                  if (mounth == 1 || mounth == 2 || mounth == 12) {
+                        season = "Winter";
+                  } else if (mounth == 3 || mounth == 4 || mounth == 5) {
+                        season = "Spring";
+                  } else if (mounth == 6 || mounth == 7 || mounth == 8) {
+                        season = "Summer";
+                  } else if (mounth == 9 || mounth == 10 || mounth == 11) {
+                        season = "Autumn";
+                  } else {
+                        System.out.println("Wrong number please try again");
+                        season = "Season unknow";
+                  }
+                  System.out.println("season = " + season);
+                  
+                  System.out.println("Do you want continue? y/n");
+                  ok = console.nextLine().charAt(0);
+
+            } while (mounth <= 0 || mounth >= 13 || ok == 'y');
+
       }
 }
