@@ -23,5 +23,22 @@ public class HolaMundo {
             } else {
                   System.out.println("False condition");
             }
+            
+            var number = 4;
+            var numberText = "Unknow number";
+            
+            if (number == 1) {
+                  numberText = "Number one";
+            } else if (number == 2){
+                  numberText = "Number two";
+            }else if (number == 3) {
+                  numberText = "Number three";
+            } else if (number == 4) {
+                  numberText = "Number four";
+            } else {
+                  numberText = "Number not found";
+            }
+            
+            System.out.println("numberText = " + numberText);
       }
 }
