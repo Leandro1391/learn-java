@@ -14,10 +14,17 @@ public class HolaMundo {
 
       public static void main(String args[]) {
 
+//            var contador = 0;
+//            while(contador < 3) {
+//                  System.out.println("contador = " + contador);
+//                  contador++;
+//            }
+            //cycle do while
             var contador = 0;
-            while(contador < 3) {
+            do {
                   System.out.println("contador = " + contador);
                   contador++;
-            }
+            } while (contador < 3);
+
       }
 }
