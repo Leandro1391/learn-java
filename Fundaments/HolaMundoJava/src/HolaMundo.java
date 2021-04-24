@@ -13,29 +13,37 @@ import java.util.Scanner;
 public class HolaMundo {
 
       public static void main(String args[]) {
-            
-            // Switch is the best way for menú options
-            //IF I don't added the keyword break the ejecution procedes to the next case in the switch
-            
-            var number = 4;
-            var numberText = "unknow value";
-            
-            switch (number){
+
+            var console = new Scanner(System.in);
+            int mounth;
+            var season = "Unknow season";
+
+            System.out.println("Press a number");
+            mounth = Integer.parseInt( console.nextLine());
+            switch (mounth) {
                   case 1:
-                          numberText = "Number one";
-                          break;
                   case 2:
-                        numberText = "Number two";
+                  case 12:
+                        season = "Winter";
                         break;
                   case 3:
-                        numberText = "Number three";
-                        break;
                   case 4:
-                        numberText = "Number four";
+                  case 5:
+                        season = "Spring";
+                        break;
+                  case 6:
+                  case 7:
+                  case 8:
+                        season = "Summer";
+                        break;
+                  case 9:
+                  case 10:
+                  case 11:
+                        season = "Autumn";
                         break;
                   default:
-                        numberText = "Case not found";
+                        season = "Wrong number";
             }
-            System.out.println("numberText = " + numberText);
+            System.out.println("season = " + season);
       }
 }
