@@ -5,6 +5,20 @@ public class Arithmetic {
       int a;
       int b;
       
+      //Constructor tiene como finalidad inicilizar los atributos del objeto y poder tener sobrecargas
+      //En todas las clases va tener un constructor defaul si no declaramos un constructor, eso lo hace el compilador
+      //Contructor vacio
+      public Arithmetic() {
+            System.out.println("Execute constructor");
+      }
+      
+      //this.a es el atributo de nuestra clase
+      public Arithmetic(int a, int b) {
+            this.a = a;
+            this.b = b;
+            System.out.println("Execute constructor with arguments");
+      }
+      
       //Metodo -> name camelCase
       public void sum() {
             int resultado = a  + b;
