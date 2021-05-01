@@ -12,6 +12,8 @@ public class TestArithmetic {
             
             //Cuando enviamos la información a nuestro método lo llamamos parámetros
             result = arithmetic1.sumWIthArguments(5, 8);
-            System.out.println("result witu arguments= " + result);
+            System.out.println("result witu arguments = " + result);
+            
+            // Dentro de un metodo estatico no podemos usar la palabra reservada THIS porque solamente se usa en una intancia de laclase
       }
 }
