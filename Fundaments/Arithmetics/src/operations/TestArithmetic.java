@@ -7,7 +7,7 @@ public class TestArithmetic {
             //Cuando se crea el objeto retorna una referencia de memoria para asignarlo a la variable arithmetic1
             //Entonces la variable arithmetic1 apunta al objeto que se creo al espacio de memoria new Arithmetic();
             
-            // Variables locales
+            // Variables locales -> se almacenan en la memoria STACK su referencia y se destruyen cuando termina su ejecutación de la clase
             int a = 10, b = 2;
             
             myMethod();
@@ -15,13 +15,19 @@ public class TestArithmetic {
             //las variables definidas a nivel de clase no se pueden definir con var.
             //this son atributos de la clase solamente se pueden usar donde se dinifió, no son estáticos
             
-            Arithmetic arithmetic1 = new Arithmetic();
+            //Las variables del objeto y el objeto en sí se almacena en la memoria HEAP, el garbage collector se encarga de borrarlos objetos
+            //System.gc() -> elimina todos los objetos que no están referencias por ninguna variables los borra
+            Arithmetic arithmetic1 = new Arithmetic(); 
             System.out.println("Arithmetic a: " + arithmetic1.a);
             System.out.println("Arithmetic b: " + arithmetic1.b);
             
             Arithmetic arithmetic2 = new Arithmetic(5, 20);
             System.out.println("Arithmetic a: " + arithmetic2.a);
             System.out.println("Arithmetic b: " + arithmetic2.b);
+            
+            // no es común usar estas dos lineas solamente son de ejemplo
+//            arithmetic1 = null;
+//            System.gc();
             
             arithmetic1.a = 3;
             arithmetic1.b = 2;
