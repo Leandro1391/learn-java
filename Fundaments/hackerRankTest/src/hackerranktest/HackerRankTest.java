@@ -4,35 +4,29 @@ import java.util.Scanner;
 
 public class HackerRankTest {
 
-      /**
-       * @param args the command line arguments
-       */
+      static int B, H;
+      static boolean flag = true;
+
+      static {
+            Scanner sc = new Scanner(System.in);
+            do {
+                  B = Integer.parseInt(sc.nextLine());
+                  H = Integer.parseInt(sc.nextLine());
+            } while ((B < -100 || B > 100) || (H < -100 || H > 100));
+
+            if (B <= 0 || H <= 0) {
+                  System.out.println("java.lang.Exception: Breadth and height must be positive");
+                  flag = false;
+            }
+      }
+
       public static void main(String[] args) {
 
-            {
-
-                  Scanner sc = new Scanner(System.in);
-                  int t = sc.nextInt();
-
-                  for (int i = 0; i < t; i++) {
-
-                        try {
-                              long x = sc.nextLong();
-                              System.out.println(x + " can be fitted in:");
-                              if (x >= Byte.MIN_VALUE && x <= Byte.MAX_VALUE) {
-                                    System.out.println("* byte \n* short \n* int\n* long");
-                              } else if (x >= Short.MIN_VALUE && x <= Short.MAX_VALUE) {
-                                    System.out.println("* short\n* int \n* long");
-                              } else if (x >= Integer.MIN_VALUE && x <= Integer.MAX_VALUE) {
-                                    System.out.println("* int\n* long");
-                              } else if (x >= Long.MIN_VALUE && x <= Long.MAX_VALUE) {
-                                    System.out.println("* long");
-                              } 
-                        } catch (Exception e) {
-                              System.out.println(sc.next() + " can't be fitted anywhere.");
-                        }
-
-                  }
+            if (flag) {
+                  int area = B * H;
+                  System.out.print(area);
+            } else  {
+                  System.out.println("java.lang.Exception: Breadth and height must be positive");
             }
       }
 }
