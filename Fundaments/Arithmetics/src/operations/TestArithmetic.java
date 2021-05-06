@@ -26,7 +26,7 @@ public class TestArithmetic {
             System.out.println("Arithmetic b: " + arithmetic2.b);
             
             // no es común usar estas dos lineas solamente son de ejemplo
-//            arithmetic1 = null;
+//            arithmetic1 = null; // aritmetic1 es una variable local en la clase
 //            System.gc();
             
             arithmetic1.a = 3;
