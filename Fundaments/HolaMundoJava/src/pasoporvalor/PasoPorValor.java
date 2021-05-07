@@ -14,6 +14,6 @@ public class PasoPorValor {
       //recibe una copia de valor del atributo x, no se puede modificar desde otro metodo
       public static void changeValue(int arg1) {
             System.out.println("arg1 = " + arg1);
-            
+            //solamente podemos modificar x si utilizamos la palabra reservada "return" en valores primitivos
       }
 }
