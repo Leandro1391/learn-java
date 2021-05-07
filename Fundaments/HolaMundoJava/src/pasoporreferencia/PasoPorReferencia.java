@@ -22,13 +22,17 @@ public class PasoPorReferencia {
             Persona persona1 = new Persona();
             persona1.nombre = "Juan";
             System.out.println("persona1 nombre: " + persona1.nombre);
-            changeValue(persona1);
+            persona1 = changeValueReference(persona1);
             System.out.println("persona1 cambio de nombre: " + persona1.nombre);
       }
       
       //En este metodo va recibir la referencia del objeto persona1
-      public static void changeValue(Persona persona) {
+//      public static void changeValue(Persona persona) {
+//            persona.nombre = "Karla";
+//      }
+      public static Persona changeValueReference(Persona persona) {
             persona.nombre = "Karla";
+            return persona;
       }
       
 }
