@@ -39,4 +39,12 @@ public class Persona {
       public void setEliminado(boolean eliminado) {
             this.eliminado = eliminado;
       }
+      
+      //toStrin nos va permisitr imprimir el estado del objeto en cualquier momento y permiti imprimircada uno de  los valores de los atributos de la clase persona para el metodo toString()
+      
+      public String toString() {
+            return "Persona [nombre: " + this.nombre + 
+                    ", sueldo: " + this.sueldo + 
+                    ", eliminado " + this.eliminado +"]"; 
+      }
 }

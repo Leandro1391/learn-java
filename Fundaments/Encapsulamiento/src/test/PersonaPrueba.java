@@ -33,5 +33,11 @@ public class PersonaPrueba {
             
             persona2.setEliminado(true);
             System.out.println("persona eliminada: " + persona2.isEliminado());
+            
+//            System.out.println("persona1: " + persona1.toString());
+//            System.out.println("persona2: " + persona2.toString());
+//                del amisma forma
+            System.out.println("persona1: " + persona1);
+            System.out.println("persona2: " + persona2);
       }
 }
