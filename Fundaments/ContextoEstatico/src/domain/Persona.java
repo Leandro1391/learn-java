@@ -9,6 +9,7 @@ public class Persona {
       public Persona(String nombre) {
             this.nombre = nombre;
             // Incrementar el contador por cada objeto nuevo
+            // Se recomienda el uso de Persona.atributoestatico para buenas practicas de identificación si es estatico (clase) o de instancia (objeto) enPOO
             this.idPersona =  ++Persona.contadorPersonas;
             
             //Se puede realizar pero no se recomienda porque es un atributo de la clase como arriba
