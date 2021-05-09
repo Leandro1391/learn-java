@@ -1,6 +1,8 @@
 package domain;
 
-public class Persona {
+//En Java solamente tiene Herencia Simple 
+//Todas las clases extienden o heredan de Object
+public class Persona extends Object{
 
       private String nombre;
       private char genero;
