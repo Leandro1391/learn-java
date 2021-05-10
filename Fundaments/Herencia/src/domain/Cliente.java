@@ -4,20 +4,12 @@ import java.util.Date;
 
 public class Cliente extends Persona {
 
-      public static int getContadorCliente() {
-            return contadorCliente;
-      }
-
-      public static void setContadorCliente(int aContadorCliente) {
-            contadorCliente = aContadorCliente;
-      }
-
       private int idCliente;
       private Date fechaRegistro;
       private boolean vip;
       private static int contadorCliente;
 
-      public Cliente(String nombre,boolean vip) {
+      public Cliente(String nombre, boolean vip) {
             super(nombre);
             this.fechaRegistro = new Date();
             this.idCliente = ++Cliente.contadorCliente;
@@ -57,10 +49,5 @@ public class Cliente extends Persona {
             sb.append('}');
             return sb.toString();
       }
-
-      
-      
-      
-      
 
 }
