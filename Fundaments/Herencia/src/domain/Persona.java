@@ -4,10 +4,10 @@ package domain;
 //Todas las clases extienden o heredan de Object
 public class Persona extends Object{
 
-      private String nombre;
-      private char genero;
-      private int edad;
-      private String direccion;
+      protected String nombre;
+      protected char genero;
+      protected int edad;
+      protected String direccion;
 
       public Persona() {
       }
