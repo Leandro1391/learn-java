@@ -15,7 +15,7 @@ public class Empleado extends Persona {
 
       public Empleado(String nombre, Double sueldo) {
 //            super(nombre); No puede estar super() o this() en el un consutrcutor solamente puede haber uno
-            this(); // con esto llamo al constructor Empleado();
+            this(); // con this() llamo al constructor Empleado() o algún otro constructor de la misma clase dependiendo de la cnatidad e argumentos definidos;
             this.nombre = nombre; // esta es una forma para setear el valor sin super
 //            this.idEmpleado = ++Empleado.contadorEmpleado;
             this.sueldo = sueldo;
