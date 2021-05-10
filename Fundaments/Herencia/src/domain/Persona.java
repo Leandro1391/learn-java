@@ -8,7 +8,8 @@ public class Persona extends Object{
       protected char genero;
       protected int edad;
       protected String direccion;
-
+      
+      //Aqui tenemos tres sobrecargars de constructores por los argumentos
       public Persona() {
       }
 

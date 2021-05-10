@@ -7,10 +7,17 @@ public class Empleado extends Persona {
       private int idEmpleado;
       private Double sueldo;
       private static int contadorEmpleado;
+      
+      public Empleado() {
+            //super(); // hay una llamada implicita a la clase padre persona
+            this.idEmpleado = ++Empleado.contadorEmpleado;
+      }
 
       public Empleado(String nombre, Double sueldo) {
-            super(nombre);
-            this.idEmpleado = ++Empleado.contadorEmpleado;
+//            super(nombre); No puede estar super() o this() en el un consutrcutor solamente puede haber uno
+            this(); // con esto llamo al constructor Empleado();
+            this.nombre = nombre; // esta es una forma para setear el valor sin super
+//            this.idEmpleado = ++Empleado.contadorEmpleado;
             this.sueldo = sueldo;
       }
 
