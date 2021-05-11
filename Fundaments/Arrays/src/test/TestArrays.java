@@ -15,6 +15,14 @@ public class TestArrays {
             System.out.println("ages 1 = " + ages[1]);
             ages[2] = 27;
             System.out.println("ages 2 = " + ages[2]);
+            
+            //Va ser un error en tiempo de ejecucion si nos sobrepasamos con la cantidad de elemtnos declarados
+//            ages[3] = 58;
+
+            for (int i = 0; i < ages.length; i++) {
+                  System.out.println("Element ages " + i + ": " + ages[i]);
+            }
+            
       }
       
 }
