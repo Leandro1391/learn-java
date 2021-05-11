@@ -14,8 +14,8 @@ public class TestArraysObject {
             System.out.println("personas 1 =  " + personas[1]);
             
             for (int i = 0; i < personas.length; i++) {
-                  System.out.println("personas  " + i  + " = " + personas[i]);
-                  
+                  System.out.println("personas  " + i + " = " + personas[i]);
             }
+            
       }
 }
