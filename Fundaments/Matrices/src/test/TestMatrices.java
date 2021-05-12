@@ -24,6 +24,18 @@ public class TestMatrices {
                   for (int col = 0; col < edades[fila].length; col++) {
                         System.out.println("Edades " + fila + " - " + col + " = " +edades[fila][col]);
                   }
+            }
+            
+            //Sintaxis clasica
+            // String frutas[][] = new String[3][2];
+            
+            //Sintaxis simplificada
+            String frutas[][] = {{"Naranja","Limon"},{"Fresa", "Zarzamora", "Mora"}};
+            
+            for (int fil = 0; fil < frutas.length; fil++) {
+                  for (int col = 0; col < frutas[fil].length; col++) {
+                        System.out.println("frutas " + fil + "-" + col + ": " + frutas[fil][col]);
+                  }
                   
             }
       }
