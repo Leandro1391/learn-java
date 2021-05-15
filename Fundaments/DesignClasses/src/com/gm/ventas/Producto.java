@@ -40,7 +40,7 @@ public class Producto {
       @Override
       public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("Producto ").append(idProducto);
+            sb.append("Producto ").append(++idProducto);
             sb.append(" ").append(nombre);
             sb.append("       ").append(precio);
             sb.append(' ');
