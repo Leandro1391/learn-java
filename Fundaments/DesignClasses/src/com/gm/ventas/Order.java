@@ -29,6 +29,7 @@ public class Order {
       }
       
       public void mostrarOrden() {
+            System.out.println("Orden Nº " + this.idOrder);
             System.out.println("Productos                    Precio");
             for (Producto producto : this.productos) {
                   if(producto != null)

@@ -7,7 +7,7 @@ public class Producto {
       private double precio;
       private static int contadorProducto;
 
-      public Producto() {
+      private Producto() {
             this.idProducto = Producto.contadorProducto++;
       }
 
