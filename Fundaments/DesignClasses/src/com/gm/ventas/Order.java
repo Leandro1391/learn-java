@@ -1,7 +1,5 @@
 package com.gm.ventas;
 
-
-
 public class Order {
 
       private int idOrder;
@@ -28,9 +26,9 @@ public class Order {
             for (Producto producto : this.productos) {
                   if (producto != null) {
                         total += producto.getPrecio();
-                  } else {
-                        break;
-                  }
+                  }  //else {
+//                        break;
+//                  }
             }
             return total;
       }
@@ -41,8 +39,6 @@ public class Order {
             for (Producto producto : this.productos) {
                   if (producto != null) {
                         System.out.println(producto.toString());
-                  } else {
-                        break;
                   }
             }
             System.out.println("Total     $ " + this.calcularTotal());
