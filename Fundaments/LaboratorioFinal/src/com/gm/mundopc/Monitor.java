@@ -1,15 +1,16 @@
 package com.gm.mundopc;
 
 public class Monitor {
-      private int idMonitor;
+
+      private final int idMonitor;
       private String marca;
       private double tamanio;
       private static int contadorMonitores;
-      
+
       private Monitor() {
             this.idMonitor = ++Monitor.contadorMonitores;
       }
-      
+
       public Monitor(String marca, Double tamanio) {
             this();
             this.marca = marca;
@@ -50,9 +51,8 @@ public class Monitor {
             sb.append("Monitor{idMonitor=").append(idMonitor);
             sb.append(", marca=").append(marca);
             sb.append(", tamanio=").append(tamanio);
-            sb.append(", contadorMonitores=").append(contadorMonitores);
             sb.append('}');
             return sb.toString();
       }
-      
+
 }

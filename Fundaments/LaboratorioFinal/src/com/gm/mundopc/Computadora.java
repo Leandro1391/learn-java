@@ -2,7 +2,7 @@ package com.gm.mundopc;
 
 public class Computadora {
       
-      private int idComputadora;
+      private final int idComputadora;
       private String nombre;
       private Monitor monitor;
       private Teclado teclado;
@@ -10,7 +10,7 @@ public class Computadora {
       private static int contadorComputadora ;
       
       private Computadora() {
-            this.idComputadora = Computadora.contadorComputadora++;
+            this.idComputadora = ++Computadora.contadorComputadora;
       }
       
       public Computadora(String nombre, Monitor monitor, Teclado teclado, Raton mouse) {
