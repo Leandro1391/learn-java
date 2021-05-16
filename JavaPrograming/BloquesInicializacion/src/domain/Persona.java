@@ -1,5 +1,10 @@
 package domain;
 
+/*
+Bloques de Inicializacion: Inicializan variables antes de invocar el contstructor,
+Existen dos tipos: Bloques de inicializacion estatico y no estaticos
+*/
+
 public class Persona {
 
       private final int idPersona;
@@ -25,6 +30,15 @@ public class Persona {
 
       public int getIdPersona() {
             return this.idPersona;
+      }
+
+      @Override
+      public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Persona{idPersona=").append(idPersona);
+            sb.append(" PersonaReferenceMemory=").append(super.toString());
+            sb.append('}');
+            return sb.toString();
       }
       
       
