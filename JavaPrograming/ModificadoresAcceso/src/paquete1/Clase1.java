@@ -1,6 +1,6 @@
 package paquete1;
 
-//public se puede apicar en una clase y en una clase externa  en el mismo paquete o en uno externo
+//protected no esta permitido a nivel clase
 public class Clase1 {
       //Se puede aplicar public en atributos
       public String atributoPublico = "Valor atributo publico";
@@ -10,6 +10,7 @@ public class Clase1 {
             System.out.println("Constructor Public");
       }
       
+      //Tambien en metodos se puede aplicar public
       public void metodoPublico() {
             System.out.println("Metodo publico");
       }
