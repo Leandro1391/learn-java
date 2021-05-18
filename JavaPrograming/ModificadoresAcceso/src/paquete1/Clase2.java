@@ -6,20 +6,20 @@ package paquete1;
 //Protected no significa que se hereden sino que pueda accederlos usando la palabra super
 
 //protected no se aplica a nivel clase dará error en el editor
-public class Clase2 {
+class Clase2 {
       //Se puede aplicar protected en atributos y se puede acceder a la clase hija
-      protected String atributoProtected = "Valor atributo protected";
+      String atributoDefault = "Valor atributo default";
       
       //en constructor se puede aplicar protected, se puede invocar desde una clase hija con la palabra super
-      protected Clase2() {
-            System.out.println("Constructor protected");
+      Clase2() {
+            System.out.println("Constructor default");
       }
       
-      public Clase2(String arg) {
+      Clase2(String arg) {
 //            this();
-            this.atributoProtected = arg;
+            this.atributoDefault = arg;
       }
-      protected void metodoProtected() {
-            System.out.println("Metodo protected");
+      void metodoDefault() {
+            System.out.println("Metodo default");
       }
 }

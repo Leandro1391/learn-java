@@ -1,6 +1,6 @@
 package paquete1;
 
-//protected no esta permitido a nivel clase
+//public  esta permitido a nivel clase
 public class Clase1 {
       //Se puede aplicar public en atributos
       public String atributoPublico = "Valor atributo publico";
