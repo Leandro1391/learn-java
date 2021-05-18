@@ -5,6 +5,8 @@ import domain.*;
 //Precondiciones para polimorfismo: Tener una herencia de clases(una clase padre e hija) y poseer al menos un metodo sobreescrito desde la clase hija que pertenezca al padre
 //Polimorfismo: multiples comportamientos en tiempo de ejecucion del programa, desde el compilador no se puede ver como se implementa
 
+//En la clase hija solamente se puede hacer menos restivtivo con respecto a la clase padre en el metodo sobreescrito si está en protected por ejmplo (public, default o protected)
+
 public class TestSobreescritura {
       public static void main(String[] args) {
             //Realizamos una instancia de la clase padre
