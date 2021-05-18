@@ -26,11 +26,11 @@ public class TestModificadoresAcceso {
             // -------------------------------
             //default o packge siginifca ausencia de modificador y solamente se puede acceder los atributos metodos, constructores y clases si están en el mismo paquete
             
-            Clase2 clase2 = new Clase2();
-            clase2.atributoDefault = "Cambio desde la prueba";
-            System.out.println("clase2.atributoDefault= " + clase2.atributoDefault);
-            clase2.metodoDefault();
-            System.out.println("clase2 = " + clase2);
+            Clase2 clase2 = new Clase2("Publico");
+            clase2.setAtributoPrivado("change value atribute");
+            System.out.println("clase2 = " + clase2.getAtributoPrivado());
+            
+            //lo mas recomendable es encapsularlo,  usando private y si hay herencia protected.
       }
 }
 

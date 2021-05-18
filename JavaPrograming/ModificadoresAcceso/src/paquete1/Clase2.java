@@ -6,20 +6,34 @@ package paquete1;
 //Protected no significa que se hereden sino que pueda accederlos usando la palabra super
 
 //protected no se aplica a nivel clase dará error en el editor
+//las clases no pueden ser privadas
 class Clase2 {
       //Se puede aplicar protected en atributos y se puede acceder a la clase hija
-      String atributoDefault = "Valor atributo default";
+     private  String atributoPrivado = "Valor atributo privado";
       
       //en constructor se puede aplicar protected, se puede invocar desde una clase hija con la palabra super
-      Clase2() {
-            System.out.println("Constructor default");
+     //si el consutructo es privado solamente se podra utilizar en la misma clase
+      private Clase2() {
+            System.out.println("Constructor private");
       }
       
-      Clase2(String arg) {
-//            this();
-            this.atributoDefault = arg;
+      public Clase2(String argumentos) {
+            this();
+            System.out.println("Constructor publico");
       }
-      void metodoDefault() {
+      
+      private void metodoDefault() {
             System.out.println("Metodo default");
       }
+
+      public String getAtributoPrivado() {
+            return atributoPrivado;
+      }
+
+      public void setAtributoPrivado(String atributoPrivado) {
+            this.atributoPrivado = atributoPrivado;
+      }
+      
 }
+
+//El conecpto de encapsulamiento es que los atributos sean privados para leer o escribir con metodos get() o set() para accederlos
