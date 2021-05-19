@@ -37,4 +37,4 @@ public class TestConversionObjetos {
 //no aplicar y entonces deberemos indicar la conversion explicita
 
 //Downcasting: convertir un tipo de la clase padre a hija
-//Upcasting: convertir un tipo de la clase hija  hacia un tipo de la clase padre
+//Upcasting: convertir un tipo de la clase hija  hacia un tipo de la clase  padre
