@@ -56,7 +56,7 @@ public class Empleado {
             if (Double.doubleToLongBits(this.sueldo) != Double.doubleToLongBits(other.sueldo)) {
                   return false;
             }
-            //Compara contenidos porque son Strings la variable nombre
+            //Compara contenidos porque son Strings las variables nombre, no compara referencias.
             if (!Objects.equals(this.nombre, other.nombre)) {
                   return false;
             }
