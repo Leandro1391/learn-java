@@ -13,3 +13,6 @@ public class TestClaseAbstracta {
             figura.dibujar(); //en polimorfimos siempre ejecuta primero la clase con menor jerarquia  del metodo dibujar() (clase hija) en este caso nunca ejecutara la clase padre porque es abstracta el metodo
       }
 }
+
+//abstract: la palabra  hace referencia cuando no sabemos el comportamiento de un metodo porque es muy generico y lo definimos en la clase hija el comportamiento obligatoriamente
+//Si es una clase significa que no se puede instanciar y por lo menos puede tener al menos un metodo abstracto o ninguno.
