@@ -19,8 +19,8 @@ public class TestColeccionesGenericas {
             miLista.add("Sabado");
             miLista.add("Domingo");
             String elemento = miLista.get(0);
-            System.out.println("elemento = " + elemento);
-            imprimir(miLista);
+//            System.out.println("elemento = " + elemento);
+//            imprimir(miLista);
 
 //            for (Object elemento : miLista) {
 //                  System.out.println("Elemento= " + elemento);
@@ -34,19 +34,20 @@ public class TestColeccionesGenericas {
             Set<String> miSet = new HashSet<>();
             miSet.add("Lunes");
             miSet.add("Martes");
-            miSet.add("Miercoes");
+            miSet.add("Miercoles");
             miSet.add("Jueves");
             miSet.add("Viernes");
-//            imprimir(miSet);
+            imprimir(miSet);
             //Las operaciones con set van a realizarse mas rapida que usando list
             
-            Map miMapa = new HashMap();
+            Map<String, String> miMapa = new HashMap<>();
             miMapa.put("valor1", "Juan"); //(key, object)
             miMapa.put("valor2", "Karla");
             miMapa.put("valor3", "Rosario");
             
-//            String elemento = (String) miMapa.get("valor1");
-//            System.out.println("elemento = " + elemento);
+//            String elementoMapa = (String) miMapa.get("valor1"); //ya no es un object ahora es un String
+            String elementoMapa = miMapa.get("valor1");
+            System.out.println("elementoMapa = " + elementoMapa);
             
             
             //imprimir(miMapa.keySet()); //no se garantiza el orden porque lo envía como Set
