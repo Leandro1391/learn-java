@@ -10,7 +10,7 @@ public class Aritmetica {
             if (denominador == 0) {
                   throw new OperacionExcepcion("Division entre cero");
             }
-            return numerador / denominado;
+            return numerador / denominador;
       }
 }
 
