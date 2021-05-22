@@ -22,9 +22,15 @@ public class TestExcepciones {
 /* La clase padre de todas las excepciones se llama Trowable https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html
 normalmente no lo vamos a usar en nuestro codigo, la que más vamos a usar es Exception que hereda de Throwable
 
-A partir del Class Exception vamos a poder crear nuestras propias clases de excepcion.
-Las clases que heredan de la clase exception se conoce como tipo Check Exception -> el compilador nos va a obligar  a usar el bloque try-catch o a propagar esta excepcion
-claseses de tipo check exception -> va aoblogar
+* A partir del Class Exception vamos a poder crear nuestras propias clases de excepcion.
+
+* Las clases que heredan de la clase exception se conoce como tipo Check Exception -> el compilador nos va a obligar  a usar el bloque try-catch o a propagar esta excepcion
+
+* Las claseses que heredan de RuntimeException se conocen como uncheck exception -> el compilador no va a obligar agregar un bloque try-catch ni tampoco reportar estas excepciones
+
+*Las clases NullPointerException cualquier variable que quiere acceder a un atributo o metodo y no esta apuntando a un objeto valido y tiene asignado un valor null entonces si tratr
+de aceder a un atributo o metodo entonces va marcar una excepcion NullPointerException en tiempo de ejecucion
 
 java.lang.ArithmeticException hereda de RuntimeException -> son excepciones que ocurren en tiempo de ejecucion
-NullPointerException */
+
+*/
