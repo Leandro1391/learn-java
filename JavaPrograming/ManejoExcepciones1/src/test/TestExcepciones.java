@@ -1,24 +1,34 @@
 package test;
 
 import static aritmetica.Aritmetica.division;
+import excepciones.OperacionExcepcion;
 
 public class TestExcepciones {
 
       public static void main(String[] args) {
 
             int resultado = 0;
-            
+
             //Con try controlamos la excepcion para que no termine el programa de forma abrupta
-//            try {
+            try {
                   resultado = division(10, 0);
 //                  resultado = 10 / 0; //esta es la linea que provoca la excepcion
-                 //capturamos la excepcion en el catch, el e es la variable que almacena  el tipo de excepcion
-//            } catch (Exception e) {
-//                  System.out.println("Exception  error: " + e);
+            // Para procesar mas de una excepcion podemos agregar otro catch
+            //En primer lugar procesamos las excepciones de menor jerarquia y el ultimo catch debe ir la clase Exception que es el padre de todas las excepciones
+            } catch (OperacionExcepcion e) {
+                  System.out.println("Ocurrió un error de tipo OperacionExcepcion");
+                  System.out.println(e.getMessage());
+                  //capturamos la excepcion en el catch, el e es la variable que almacena  el tipo de excepcion
+            } catch (Exception e) {
+                  System.out.println("Exception  error of type Exception: " + e);
 //                  e.printStackTrace(System.out); //Imprimimos la pila de expcepciones, porque puede haber una lista de excepciones
-//                  System.out.println(e.getMessage());
-//            }
+                  System.out.println(e.getMessage());
+            } finally {
+                  System.out.println("Se reviso la division entre cero");
+            }
 
+            //finally -> este bloque siempre se va ejecutar al final de la ejecucion try catch, se puede usar para cerrar recursos por ejemplo para finalizar la conexion a una base de datos o un archivo 
+            //que se esta utilizando
             System.out.println("resultado = " + resultado);
       }
 }
