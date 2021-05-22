@@ -14,7 +14,7 @@ public class TestColecciones {
             miLista.add("Viernes");
             miLista.add("Sabado");
             miLista.add("Domingo");
-            imprimir(miLista);
+//            imprimir(miLista);
 
 //            for (Object elemento : miLista) {
 //                  System.out.println("Elemento= " + elemento);
@@ -29,9 +29,20 @@ public class TestColecciones {
             miSet.add("Miercoes");
             miSet.add("Jueves");
             miSet.add("Viernes");
-            imprimir(miSet);
+//            imprimir(miSet);
             //Las operaciones con set van a realizarse mas rapida que usando list
-
+            
+            Map miMapa = new HashMap();
+            miMapa.put("valor1", "Juan"); //(key, object)
+            miMapa.put("valor2", "Karla");
+            miMapa.put("valor3", "Rosario");
+            
+            String elemento = (String) miMapa.get("valor1");
+//            System.out.println("elemento = " + elemento);
+            
+            
+            //imprimir(miMapa.keySet()); //no se garantiza el orden porque lo envía como Set
+            imprimir(miMapa.values()); //con values() podemos ver toda la lista de keys almacenadas en la variabl miMapa
       }
 
       //interfaz collecction es el mas generico de java para los tipos List y set
