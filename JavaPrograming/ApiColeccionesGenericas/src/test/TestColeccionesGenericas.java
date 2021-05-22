@@ -37,21 +37,22 @@ public class TestColeccionesGenericas {
             miSet.add("Miercoles");
             miSet.add("Jueves");
             miSet.add("Viernes");
-            imprimir(miSet);
+//            imprimir(miSet);
             //Las operaciones con set van a realizarse mas rapida que usando list
             
             Map<String, String> miMapa = new HashMap<>();
             miMapa.put("valor1", "Juan"); //(key, object)
-            miMapa.put("valor2", "Karla");
+            miMapa.put("valor2", "Julia");
             miMapa.put("valor3", "Rosario");
+            miMapa.put("valor3", "Charles");// el elemento almacenado en la key "valor3" se va a reemplazar por Charles
             
 //            String elementoMapa = (String) miMapa.get("valor1"); //ya no es un object ahora es un String
             String elementoMapa = miMapa.get("valor1");
-            System.out.println("elementoMapa = " + elementoMapa);
+//            System.out.println("elementoMapa = " + elementoMapa);
             
             
-            //imprimir(miMapa.keySet()); //no se garantiza el orden porque lo envía como Set
-//            imprimir(miMapa.values()); //con values() podemos ver toda la lista de keys almacenadas en la variabl miMapa
+            imprimir(miMapa.keySet()); //no se garantiza el orden porque lo envía como Set
+            imprimir(miMapa.values()); //con values() podemos ver toda la lista de keys almacenadas en la variable miMapa
       }
 
       //interfaz collecction es el mas generico de java para los tipos List y set
