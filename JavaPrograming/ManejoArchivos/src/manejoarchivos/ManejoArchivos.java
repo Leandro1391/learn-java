@@ -22,7 +22,7 @@ public class ManejoArchivos {
                   ex.printStackTrace(System.out);
             }
       }
-      
+
       public static void escribirArchivo(String nombreArchivo, String contenido) {
             File archivo = new File(nombreArchivo);
             try {
@@ -34,5 +34,17 @@ public class ManejoArchivos {
                   e.printStackTrace(System.out);
             }
       }
-      
+
+      public static void anexarArchivo(String nombreArchivo, String contenido) {
+            File archivo = new File(nombreArchivo);
+            try {
+                  PrintWriter salida = new PrintWriter(new FileWriter(archivo, true));
+                  salida.println(contenido);
+                  salida.close();
+                  System.out.println("Se ha escrito el archivo");
+            } catch (IOException e) {
+                  e.printStackTrace(System.out);
+            }
+      }
+
 }
