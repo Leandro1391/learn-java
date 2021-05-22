@@ -9,15 +9,15 @@ public class TestExcepciones {
             int resultado = 0;
             
             //Con try controlamos la excepcion para que no termine el programa de forma abrupta
-            try {
+//            try {
                   resultado = division(10, 0);
 //                  resultado = 10 / 0; //esta es la linea que provoca la excepcion
                  //capturamos la excepcion en el catch, el e es la variable que almacena  el tipo de excepcion
-            } catch (Exception e) {
-                  System.out.println("Exception  error: " + e);
-                  e.printStackTrace(System.out); //Imprimimos la pila de expcepciones, porque puede haber una lista de excepciones
-                  System.out.println(e.getMessage());
-            }
+//            } catch (Exception e) {
+//                  System.out.println("Exception  error: " + e);
+//                  e.printStackTrace(System.out); //Imprimimos la pila de expcepciones, porque puede haber una lista de excepciones
+//                  System.out.println(e.getMessage());
+//            }
 
             System.out.println("resultado = " + resultado);
       }
@@ -37,4 +37,8 @@ de aceder a un atributo o metodo entonces va marcar una excepcion NullPointerExc
 
 java.lang.ArithmeticException hereda de RuntimeException -> son excepciones que ocurren en tiempo de ejecucion
 
+RECOMENDACION: en el dia de hoy se recomenda usar excepciones de RunTimeException, tener mas limpio el codigo y usar solamente try catch de las excepciones que pueden aparecer en la ejecucion
+
+Solamente agregamos clases heredados a exception si es necesario, lo recomendable es con RunTimeException pero depende del desarrollador
+check exception -> class Exception || uncheck exception -> RunTimeExcetion
 */
