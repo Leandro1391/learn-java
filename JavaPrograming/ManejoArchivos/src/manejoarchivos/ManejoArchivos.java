@@ -1,8 +1,6 @@
 package manejoarchivos;
 
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /*
 Crear archivo
@@ -24,4 +22,17 @@ public class ManejoArchivos {
                   ex.printStackTrace(System.out);
             }
       }
+      
+      public static void escribirArchivo(String nombreArchivo, String contenido) {
+            File archivo = new File(nombreArchivo);
+            try {
+                  PrintWriter salida = new PrintWriter(archivo);
+                  salida.println(contenido);
+                  salida.close();
+                  System.out.println("Se ha escrito el archivo");
+            } catch (Exception e) {
+                  e.printStackTrace(System.out);
+            }
+      }
+      
 }
