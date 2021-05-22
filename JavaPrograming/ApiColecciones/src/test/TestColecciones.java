@@ -13,6 +13,13 @@ public class TestColecciones {
             miLista.add("Viernes");
             miLista.add("Sabado");
             miLista.add("Domingo");
+            
+//            for (Object elemento : miLista) {
+//                  System.out.println("Elemento= " + elemento);
+//            }
+            
+            //en java podemos usar el conecpto de lambda o funcion flecha desde la version 8
+            miLista.forEach(element -> System.out.println("miLista = " + element));
       }
 }
 
