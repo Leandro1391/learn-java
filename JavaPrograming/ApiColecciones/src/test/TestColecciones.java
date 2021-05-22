@@ -21,7 +21,8 @@ public class TestColecciones {
 //            }
             //en java podemos usar el conecpto de lambda o funcion flecha desde la version 8
 //            miLista.forEach(element -> System.out.println("miLista = " + element));
-            //Set - es igual que List con la diferencia que no matiene el orden de los elementos que se hayan guardado
+            //Set - es igual que List con la diferencia que no matiene el orden de los elementos que se van guardando y es mas eficiente que list siempre y cuando no necesite mantener un orden
+            //no guarda un orden al almacenar los elementos
             Set miSet = new HashSet();
             miSet.add("Lunes");
             miSet.add("Martes");
@@ -29,6 +30,7 @@ public class TestColecciones {
             miSet.add("Jueves");
             miSet.add("Viernes");
             imprimir(miSet);
+            //Las operaciones con set van a realizarse mas rapida que usando list
 
       }
 
@@ -38,4 +40,7 @@ public class TestColecciones {
       }
 }
 
-/*Una lista tiene como propiedad agregar elementos de forma dinamica y ademas  mantiene el orden en el cual se guarda*/
+/*Una lista tiene como propiedad agregar elementos de forma dinamica y ademas  mantiene el orden en el cual se guarda
+En Set es como una lista pero no guarda los elementos en forma que se van almacenando y tiene mejor performance que list
+en el tipo Lista se puede duplicar los elementos en cambio en set No 
+*/
