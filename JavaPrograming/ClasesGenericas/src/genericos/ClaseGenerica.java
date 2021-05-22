@@ -11,6 +11,7 @@ que vamos a crear un objeto de la instancia de esta clase, se especificará el t
 
 public class ClaseGenerica<T> {
       
+      //declaramos el atributo
       private T objecto;
       
       public ClaseGenerica(T objecto) {
