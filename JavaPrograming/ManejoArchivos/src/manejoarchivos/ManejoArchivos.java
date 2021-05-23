@@ -5,6 +5,7 @@ import java.io.*;
 /*
 Crear archivo
 Guardar informacion
+Leer
 Eliminar informacion
 Eliminar por completo
  */
@@ -52,7 +53,7 @@ public class ManejoArchivos {
             try {
                   var entrada = new BufferedReader(new FileReader(archivo));
                   var lectura = entrada.readLine();
-                  while(lectura != null) {
+                  while (lectura != null) {
                         System.out.println("lectura = " + lectura);
                         lectura = entrada.readLine();
                   }
@@ -61,6 +62,15 @@ public class ManejoArchivos {
                   ex.printStackTrace(System.out);
             } catch (IOException ex) {
                   ex.printStackTrace(System.out);
+            }
+      }
+
+      public static void eliminarArchivo(String nombreArchivo) {
+            var archivo = new File(nombreArchivo);
+            if (archivo.delete()) {
+                  System.out.println("Deleted the file: " + archivo.getName());
+            } else {
+                  System.out.println("Failed to delete the file.");
             }
       }
 
