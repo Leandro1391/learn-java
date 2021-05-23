@@ -8,7 +8,11 @@ public class TestManejoArchivos {
 //             crearArchivo(nombreArchivo);
             
 //            escribirArchivo(nombreArchivo, "Hello from Java");
-            anexarArchivo(nombreArchivo, "Hello from Java");
-            anexarArchivo(nombreArchivo, "Goodbye");
+//            anexarArchivo(nombreArchivo, "Hello from Java");
+//            anexarArchivo(nombreArchivo, "Goodbye");
+
+            leerArchivo(nombreArchivo);
+
+                 
       }
 }
