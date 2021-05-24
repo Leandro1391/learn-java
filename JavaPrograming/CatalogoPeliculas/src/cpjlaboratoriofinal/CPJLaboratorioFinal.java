@@ -53,7 +53,8 @@ public class CPJLaboratorioFinal {
                               catalogoPeliculas.buscarPelicula(nombreArchivo, searchName);
                               break;
                         case 5:
-
+                              catalogoPeliculas.datos.borrar(nombreArchivo);
+                              break;
                         default:
                               System.out.println("Opcion incorrectar vuelve a intentar");
                               break;
