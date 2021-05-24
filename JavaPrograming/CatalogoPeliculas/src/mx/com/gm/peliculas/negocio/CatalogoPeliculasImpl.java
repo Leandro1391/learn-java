@@ -36,22 +36,15 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas {
             miLista = this.datos.listar(nombreArchivo);
 
             for (Pelicula pelicula : miLista) {
-                  if (buscar == pelicula.getNombre()) {
+                  if (pelicula.getNombre().equals(buscar)) {
                         System.out.println("Pelicula encontrada en el archivo");
                         flag = 1;
                         break;
                   }
             }
-
-            if (flag == 0) {
+            
+            if (flag == 0)
                   System.out.println("No se encontro la pelicula en el catalogo");
-            }
-
-//            miLista.forEach(element -> {
-//                  if(buscar == element.getNombre()){
-//                        System.out.println("Pelicula encontrada en el archivo");
-//                    }
-//            });
       }
 
       @Override
