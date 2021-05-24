@@ -1,5 +1,5 @@
 package mx.com.gm.peliculas.excepciones;
 
-public class EscrituraDatosEx {
+public class EscrituraDatosEx extends AccesoDatosEx{
       
 }

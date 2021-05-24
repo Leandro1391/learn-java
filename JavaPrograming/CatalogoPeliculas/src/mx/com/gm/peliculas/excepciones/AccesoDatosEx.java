@@ -1,6 +1,5 @@
 package mx.com.gm.peliculas.excepciones;
 
-public class AccesoDatosEx {
-      
+public class AccesoDatosEx extends RuntimeException{
       
 }

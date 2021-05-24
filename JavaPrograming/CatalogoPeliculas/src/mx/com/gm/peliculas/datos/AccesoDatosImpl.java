@@ -1,7 +1,7 @@
 package mx.com.gm.peliculas.datos;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 import mx.com.gm.peliculas.domain.Pelicula;
 
 public class AccesoDatosImpl implements IAccesoDatos {
@@ -15,8 +15,26 @@ public class AccesoDatosImpl implements IAccesoDatos {
       }
 
       @Override
-      public ArrayList<Pelicula> listar(String nombre) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      public List<Pelicula> listar(String nombreArchivo) {
+            Pelicula unaPeli = new Pelicula();
+            List miLista = new ArrayList();
+            File archivo = new File(nombreArchivo);
+            try {
+                  var entrada = new BufferedReader(new FileReader(archivo));
+                  var lectura = entrada.readLine();
+                  while (lectura != null) {
+                        unaPeli.setNombre(lectura);
+                        miLista.add(unaPeli);
+//                        System.out.println("lectura = " + lectura);
+                        lectura = entrada.readLine();
+                  }
+                  entrada.close();
+            } catch (FileNotFoundException ex) {
+                  ex.printStackTrace(System.out);
+            } catch (IOException ex) {
+                  ex.printStackTrace(System.out);
+            }
+            return miLista;
       }
 
       @Override
@@ -26,7 +44,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
                   PrintWriter salida = new PrintWriter(new FileWriter(archivo, anexar));
                   salida.println(pelicula);
                   salida.close();
-                  System.out.println("Se ha anexado pelicula al archivo");
+                  System.out.println("Se ha anexado la pelicula al archivo");
             } catch (IOException e) {
                   e.printStackTrace(System.out);
             }
