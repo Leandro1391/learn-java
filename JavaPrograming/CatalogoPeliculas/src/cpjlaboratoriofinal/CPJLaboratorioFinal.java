@@ -10,9 +10,9 @@ public class CPJLaboratorioFinal {
 
             var console = new Scanner(System.in);
 
-            int opcion;
-            String nombreArchivo;
-            var catalogoPeliculas = new CatalogoPeliculasImpl();
+            int opcion = 0;
+            String nombreArchivo = "peliculas.txt";
+            CatalogoPeliculasImpl catalogoPeliculas;
 
             do {
                   System.out.println("Elige opcion: ");
@@ -27,21 +27,25 @@ public class CPJLaboratorioFinal {
                   } catch (NumberFormatException e) {
                         e.printStackTrace(System.out);
                         System.out.println(e.getMessage());
+                        opcion = 5;
                   } catch(Exception e) {
                         e.printStackTrace(System.out);
-                  }finally {
-                        opcion = 5;
                   }
                   
 
                   switch (opcion) {
                         case 1:
+                              catalogoPeliculas = new CatalogoPeliculasImpl();
+                              catalogoPeliculas.iniciarArchivo(nombreArchivo);
                               break;
                         case 2:
+                              
                               break;
                         case 3:
+                              
                               break;
                         case 4:
+                              
                               break;
                         default:
                               System.out.println("Opcion incorrectar vuelve a intentar");

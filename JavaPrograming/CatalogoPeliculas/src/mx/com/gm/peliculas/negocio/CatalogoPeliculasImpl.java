@@ -1,28 +1,35 @@
 package mx.com.gm.peliculas.negocio;
 
+import mx.com.gm.peliculas.datos.AccesoDatosImpl;
+import mx.com.gm.peliculas.datos.IAccesoDatos;
+
 public class CatalogoPeliculasImpl implements ICatalogoPeliculas{
+      
+      public IAccesoDatos datos;
 
       public CatalogoPeliculasImpl() {
+            this.datos = new AccesoDatosImpl();
       }
 
       @Override
       public void agregarPelicula(String nombrePelicula, String nombreArchivo) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
       }
 
       @Override
       public void listarPeliculas(String nombreArchivo) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
       }
 
       @Override
       public void buscarPelicula(String nombreArchivo, String buscar) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
       }
 
       @Override
       public void iniciarArchivo(String nombreArchivo) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            //opcion 1
+            this.datos.crear(nombreArchivo);
       }
       
 }
