@@ -22,45 +22,43 @@ public class CPJLaboratorioFinal {
                   System.out.println("4 - Buscar Pelicula");
                   System.out.println("5 - Eliminar Pelicula");
                   System.out.println("0 - Salir");
-                  
+
+                  catalogoPeliculas = new CatalogoPeliculasImpl();
+
                   try {
                         opcion = Integer.parseInt(console.nextLine());
                   } catch (NumberFormatException e) {
                         e.printStackTrace(System.out);
                         System.out.println(e.getMessage());
                         opcion = -1;
-                  } catch(Exception e) {
+                  } catch (Exception e) {
                         e.printStackTrace(System.out);
                   }
-                  
 
                   switch (opcion) {
                         case 1:
-                              catalogoPeliculas = new CatalogoPeliculasImpl();
                               catalogoPeliculas.iniciarArchivo(nombreArchivo);
                               break;
                         case 2:
-                              //la instancia se hara una sola vez en la opcion 1
-                              catalogoPeliculas = new CatalogoPeliculasImpl();
                               System.out.println("Introduce el nombre de una pelicula a agregar:");
                               var nombre = console.nextLine();
                               catalogoPeliculas.agregarPelicula(nombre, nombreArchivo);
                               break;
                         case 3:
-                              catalogoPeliculas = new CatalogoPeliculasImpl();
-//                              System.out.println("Lista de peliculas");
                               catalogoPeliculas.listarPeliculas(nombreArchivo);
                               break;
                         case 4:
-                              
+                              System.out.println("Introduce el nombre de una pelicula para buscar en el catalogo:");
+                              var searchName = console.nextLine();
+                              catalogoPeliculas.buscarPelicula(nombreArchivo, searchName);
                               break;
                         case 5:
-                              
+
                         default:
                               System.out.println("Opcion incorrectar vuelve a intentar");
                               break;
                   }
-                   
+
                   System.out.println(" ");
             } while (opcion != 0);
       }

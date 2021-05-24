@@ -16,16 +16,15 @@ public class AccesoDatosImpl implements IAccesoDatos {
 
       @Override
       public List<Pelicula> listar(String nombreArchivo) {
-            Pelicula unaPeli = new Pelicula();
             List miLista = new ArrayList();
             File archivo = new File(nombreArchivo);
             try {
                   var entrada = new BufferedReader(new FileReader(archivo));
                   var lectura = entrada.readLine();
                   while (lectura != null) {
+                        Pelicula unaPeli = new Pelicula();
                         unaPeli.setNombre(lectura);
                         miLista.add(unaPeli);
-//                        System.out.println("lectura = " + lectura);
                         lectura = entrada.readLine();
                   }
                   entrada.close();

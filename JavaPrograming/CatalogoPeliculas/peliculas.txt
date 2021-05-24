@@ -1,1 +1,2 @@
 Pelicula:Batman
+Pelicula:Superman
