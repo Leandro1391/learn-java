@@ -21,20 +21,16 @@ public class AccesoDatosImpl implements IAccesoDatos {
       public List<Pelicula> listar(String nombreArchivo) throws LecturaDatosEx {
             List<Pelicula> miLista = new ArrayList<>();
             try {
-                  if (this.existe(nombreArchivo)) {
-                        File archivo = new File(nombreArchivo);
-                        var entrada = new BufferedReader(new FileReader(archivo));
-                        var lectura = entrada.readLine();
-                        while (lectura != null) {
-                              Pelicula unaPeli = new Pelicula();
-                              unaPeli.setNombre(lectura);
-                              miLista.add(unaPeli);
-                              lectura = entrada.readLine();
-                        }
-                        entrada.close();
-                  } else {
-                        System.out.println("No existe el archivo");
+                  File archivo = new File(nombreArchivo);
+                  var entrada = new BufferedReader(new FileReader(archivo));
+                  var lectura = entrada.readLine();
+                  while (lectura != null) {
+                        Pelicula unaPeli = new Pelicula();
+                        unaPeli.setNombre(lectura);
+                        miLista.add(unaPeli);
+                        lectura = entrada.readLine();
                   }
+                  entrada.close();
             } catch (FileNotFoundException ex) {
                   ex.printStackTrace(System.out);
                   //Abajo estamos propagando una excepcion nuestra para que el usuairo entienda mejor que esta pasando en la aplicacion
@@ -48,15 +44,11 @@ public class AccesoDatosImpl implements IAccesoDatos {
       @Override
       public void escribir(Pelicula pelicula, String nombreArchivo, boolean anexar) throws EscrituraDatosEx {
             try {
-                  if (this.existe(nombreArchivo)) {
-                        File archivo = new File(nombreArchivo);
-                        PrintWriter salida = new PrintWriter(new FileWriter(archivo, anexar));
-                        salida.println(pelicula.toString());
-                        salida.close();
-                        System.out.println("Se ha anexado la pelicula al archivo: " + pelicula);
-                  } else {
-                        System.out.println("No existe el archivo");
-                  }
+                  File archivo = new File(nombreArchivo);
+                  PrintWriter salida = new PrintWriter(new FileWriter(archivo, anexar));
+                  salida.println(pelicula.toString());
+                  salida.close();
+                  System.out.println("Se ha anexado la pelicula al archivo: " + pelicula);
             } catch (IOException ex) {
                   ex.printStackTrace(System.out);
                   throw new EscrituraDatosEx("Excepcion al escribir peliculas: " + ex.getMessage());
@@ -93,32 +85,24 @@ public class AccesoDatosImpl implements IAccesoDatos {
 
       @Override
       public void crear(String nombreArchivo) throws AccesoDatosEx {
-            if (!(this.existe(nombreArchivo))) {
-                  File archivo = new File(nombreArchivo);
-                  try {
-                        PrintWriter salida = new PrintWriter(archivo);
-                        salida.close();
-                        System.out.println("file successfull created");
-                  } catch (Exception e) {
-                        e.printStackTrace(System.out);
-                        throw new AccesoDatosEx("Excepcion al crear arhivo: " + e.getMessage());
-                  }
-            } else {
-                  System.out.println("El archivo ya esta creado");
+            File archivo = new File(nombreArchivo);
+            try {
+                  PrintWriter salida = new PrintWriter(archivo);
+                  salida.close();
+                  System.out.println("file successfull created");
+            } catch (FileNotFoundException e) {
+                  e.printStackTrace(System.out);
+                  throw new AccesoDatosEx("Excepcion al crear arhivo: " + e.getMessage());
             }
       }
 
       @Override
       public void borrar(String nombreArchivo) {
-            if (this.existe(nombreArchivo)) {
-                  File archivo = new File(nombreArchivo);
-                  if (archivo.delete()) {
-                        System.out.println("Deleted the file: " + archivo.getName());
-                  } else {
-                        System.out.println("Failed to delete the file.");
-                  }
+            File archivo = new File(nombreArchivo);
+            if (archivo.delete()) {
+                  System.out.println("Deleted the file: " + archivo.getName());
             } else {
-                  System.out.println("No se puede eliminar porque el archivo no existe");
+                  System.out.println("Failed to delete the file.");
             }
       }
 

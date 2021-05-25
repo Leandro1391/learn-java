@@ -18,8 +18,12 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas {
             Pelicula unaPelicula = new Pelicula(nombrePelicula);
             boolean anexar = false;
             try {
-                  anexar = datos.existe(NOMBRE_RECURSO);
-                  this.datos.escribir(unaPelicula, NOMBRE_RECURSO, anexar);
+                  if (this.datos.existe(NOMBRE_RECURSO)) {
+                        anexar = datos.existe(NOMBRE_RECURSO);
+                        this.datos.escribir(unaPelicula, NOMBRE_RECURSO, anexar);
+                  } else {
+                        System.out.println("No se encontro el archivo");
+                  }
             } catch (AccesoDatosEx ex) {
                   System.out.println("Error de acceso de datos");
                   ex.printStackTrace(System.out);
@@ -29,8 +33,12 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas {
       @Override
       public void listarPeliculas() {
             try {
-                  var miListaPeliculas = this.datos.listar(ICatalogoPeliculas.NOMBRE_RECURSO);
-                  miListaPeliculas.forEach(elemento -> System.out.println(elemento.getNombre()));
+                  if (this.datos.existe(NOMBRE_RECURSO)) {
+                        var miListaPeliculas = this.datos.listar(ICatalogoPeliculas.NOMBRE_RECURSO);
+                        miListaPeliculas.forEach(elemento -> System.out.println(elemento.getNombre()));
+                  } else {
+                        System.out.println("No se encontro el archivo");
+                  }
             } catch (AccesoDatosEx ex) {
                   System.out.println("Error de acceso de datos");
                   ex.printStackTrace(System.out);
@@ -41,8 +49,12 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas {
       public void buscarPelicula(String buscar) {
             String resultado = null;
             try {
-                  resultado = this.datos.buscar(ICatalogoPeliculas.NOMBRE_RECURSO, buscar);
-            } catch (LecturaDatosEx ex) {
+                  if (this.datos.existe(NOMBRE_RECURSO)) {
+                        resultado = this.datos.buscar(NOMBRE_RECURSO, buscar);
+                  } else {
+                        System.out.println("No se encontro el archivo");
+                  }
+            } catch (AccesoDatosEx ex) {
                   System.out.println("Error de acceso datos");
                   ex.printStackTrace(System.out);
             }
@@ -52,8 +64,13 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas {
       @Override
       public void iniciarArchivo() {
             try {
-                  this.datos.crear(ICatalogoPeliculas.NOMBRE_RECURSO);
+                  if (!(this.datos.existe(NOMBRE_RECURSO))) {
+                        this.datos.crear(NOMBRE_RECURSO);
+                  } else {
+                        System.out.println("El archivo ya existe en el sistema");
+                  }
             } catch (AccesoDatosEx ex) {
+                  System.out.println("Error de acceso datos");
                   ex.printStackTrace(System.out);
             }
       }
@@ -61,7 +78,11 @@ public class CatalogoPeliculasImpl implements ICatalogoPeliculas {
       @Override
       public void borrarArchivo() {
             try {
-                  this.datos.borrar(NOMBRE_RECURSO);
+                  if (this.datos.existe(NOMBRE_RECURSO)) {
+                        this.datos.borrar(NOMBRE_RECURSO);
+                  } else {
+                        System.out.println("No existe el archivo o ya se ha eliminado");
+                  }
             } catch (AccesoDatosEx ex) {
                   ex.printStackTrace(System.out);
             }
