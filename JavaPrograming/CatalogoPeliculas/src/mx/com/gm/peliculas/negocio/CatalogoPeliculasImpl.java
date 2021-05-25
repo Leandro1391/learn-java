@@ -1,55 +1,69 @@
 package mx.com.gm.peliculas.negocio;
 
 import java.util.*;
-import mx.com.gm.peliculas.datos.AccesoDatosImpl;
-import mx.com.gm.peliculas.datos.IAccesoDatos;
+import mx.com.gm.peliculas.datos.*;
+import mx.com.gm.peliculas.excepciones.*;
 import mx.com.gm.peliculas.domain.Pelicula;
 
 public class CatalogoPeliculasImpl implements ICatalogoPeliculas {
 
-      public IAccesoDatos datos;
+      private final IAccesoDatos datos;
 
       public CatalogoPeliculasImpl() {
             this.datos = new AccesoDatosImpl();
       }
 
       @Override
-      public void agregarPelicula(String nombrePelicula, String nombreArchivo) {
+      public void agregarPelicula(String nombrePelicula) {
             Pelicula unaPelicula = new Pelicula(nombrePelicula);
-
-            //necesit la instancia de la clase pelicula
-            this.datos.escribir(unaPelicula, nombreArchivo, true);
-      }
-
-      @Override
-      public void listarPeliculas(String nombreArchivo) {
-            List<Pelicula> miLista = new ArrayList<>();
-            miLista = this.datos.listar(nombreArchivo);
-            miLista.forEach(elemento -> System.out.println(elemento.getNombre()));
-
-      }
-
-      @Override
-      public void buscarPelicula(String nombreArchivo, String buscar) {
-            int flag = 0;
-            List<Pelicula> miLista = new ArrayList<>();
-            miLista = this.datos.listar(nombreArchivo);
-
-            for (Pelicula pelicula : miLista) {
-                  if (pelicula.getNombre().equals(buscar)) {
-                        System.out.println("Pelicula encontrada en el archivo");
-                        flag = 1;
-                        break;
-                  }
+            boolean anexar = false;
+            try {
+                  anexar = datos.existe(NOMBRE_RECURSO);
+                  this.datos.escribir(unaPelicula, NOMBRE_RECURSO, anexar);
+            } catch (AccesoDatosEx ex) {
+                  System.out.println("Error de acceso de datos");
+                  ex.printStackTrace(System.out);
             }
-            
-            if (flag == 0)
-                  System.out.println("No se encontro la pelicula en el catalogo");
       }
 
       @Override
-      public void iniciarArchivo(String nombreArchivo) {
-            this.datos.crear(nombreArchivo);
+      public void listarPeliculas() {
+            try {
+                  var miListaPeliculas = this.datos.listar(ICatalogoPeliculas.NOMBRE_RECURSO);
+                  miListaPeliculas.forEach(elemento -> System.out.println(elemento.getNombre()));
+            } catch (AccesoDatosEx ex) {
+                  System.out.println("Error de acceso de datos");
+                  ex.printStackTrace(System.out);
+            }
       }
 
+      @Override
+      public void buscarPelicula(String buscar) {
+            String resultado = null;
+            try {
+                  resultado = this.datos.buscar(ICatalogoPeliculas.NOMBRE_RECURSO, buscar);
+            } catch (LecturaDatosEx ex) {
+                  System.out.println("Error de acceso datos");
+                  ex.printStackTrace(System.out);
+            }
+            System.out.println("resultado = " + resultado);
+      }
+
+      @Override
+      public void iniciarArchivo() {
+            try {
+                  this.datos.crear(ICatalogoPeliculas.NOMBRE_RECURSO);
+            } catch (AccesoDatosEx ex) {
+                  ex.printStackTrace(System.out);
+            }
+      }
+
+      @Override
+      public void borrarArchivo() {
+            try {
+                  this.datos.borrar(NOMBRE_RECURSO);
+            } catch (AccesoDatosEx ex) {
+                  ex.printStackTrace(System.out);
+            }
+      }
 }
