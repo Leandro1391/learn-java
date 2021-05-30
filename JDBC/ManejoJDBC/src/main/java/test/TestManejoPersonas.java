@@ -10,7 +10,6 @@ public class TestManejoPersonas {
 
       public static void main(String[] args) {
             
-            /*
             //En realidad en la siguiente linea conviene usar una interfaz - se vera mas adelante con capa de datos
             PersonaDAO personaDao = new PersonaDAO();
 
@@ -27,28 +26,7 @@ public class TestManejoPersonas {
             personaDao.eliminar(personaDelete);
 
             List<Persona> personas = personaDao.seleccionar();
-            personas.forEach(persona -> System.out.println("persona = " + persona));
-            */
-            
-            //Usuario test
-            UsuarioDAO usuarioDao = new UsuarioDAO();
-            
-            Usuario usuarioNuevo = new Usuario("Charles", "3214");
-            usuarioDao.insertar(usuarioNuevo);
-            
-            Usuario usuarioNuevo1 = new Usuario("Dimitri", "8796");
-            usuarioDao.insertar(usuarioNuevo1);
-            
-            Usuario actualizarUsuario = new Usuario(1, "Paulin", "222222");
-            usuarioDao.actualizar(actualizarUsuario);
-
-//            Usuario eliminarUsuario = new Usuario(1);
-//            usuarioDao.eliminar(eliminarUsuario);
-
-//            usuarioDao.truncate();
-            
-            List<Usuario> listaUsuarios = usuarioDao.seleccionar();
-            listaUsuarios.forEach(usuario -> System.out.println("usuario = " + usuario));
+            personas.forEach(persona -> System.out.println("persona = " + persona));            
             
       }
 }
