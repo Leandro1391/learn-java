@@ -7,11 +7,20 @@ import java.util.*;
 
 public class UsuarioDAO {
 
+      private Connection conexionTransaction;
+
       private static final String SQL_SELECT = "SELECT id_usuario, usuario, password FROM usuarios";
       private static final String SQL_INSERT = "INSERT INTO usuarios(usuario, password) VALUES(?, ?) ";
       private static final String SQL_UPDATE = "UPDATE usuarios SET usuario = ?, password = ? WHERE id_usuario = ?";
       private static final String SQL_DELETE = "DELETE FROM usuarios WHERE id_usuario = ?";
       private static final String SQL_TRUNCATE = "TRUNCATE TABLE usuarios";
+
+      public UsuarioDAO() {
+      }
+
+      public UsuarioDAO(Connection conn) {
+            this.conexionTransaction = conn;
+      }
 
       public List<Usuario> seleccionar() {
             Connection conn = null;
@@ -49,23 +58,23 @@ public class UsuarioDAO {
             return usuarios;
       }
 
-      public int insertar(Usuario unUsuario) {
+      public int insertar(Usuario unUsuario) throws SQLException {
             Connection conn = null;
             PreparedStatement stmt = null;
             int registros = 0;
 
             try {
-                  conn = getConnection();
+                  conn = (this.conexionTransaction != null) ? this.conexionTransaction : getConnection();
                   stmt = conn.prepareStatement(SQL_INSERT);
                   stmt.setString(1, unUsuario.getUsuario());
                   stmt.setString(2, unUsuario.getPassword());
                   registros = stmt.executeUpdate();
-            } catch (SQLException ex) {
-                  ex.printStackTrace(System.out);
-            } finally {
+           } finally {
                   try {
-                        close(conn);
                         close(stmt);
+                        if (this.conexionTransaction == null) {
+                              close(conn);
+                        }
                   } catch (SQLException ex) {
                         ex.printStackTrace(System.out);
                   }
@@ -73,23 +82,23 @@ public class UsuarioDAO {
             return registros;
       }
 
-      public int actualizar(Usuario unUsuario) {
+      public int actualizar(Usuario unUsuario) throws SQLException {
             Connection conn = null;
             PreparedStatement stmt = null;
             int registros = 0;
             try {
-                  conn = Conexion.getConnection();
+                  conn = (this.conexionTransaction != null) ? this.conexionTransaction : getConnection();
                   stmt = conn.prepareStatement(SQL_UPDATE);
                   stmt.setString(1, unUsuario.getUsuario());
                   stmt.setString(2, unUsuario.getPassword());
                   stmt.setInt(3, unUsuario.getIdUsuario());
                   registros = stmt.executeUpdate();
-            } catch (SQLException ex) {
-                  ex.printStackTrace(System.out);
             } finally {
                   try {
-                        close(conn);
                         close(stmt);
+                        if (this.conexionTransaction == null) {
+                              close(conn);
+                        }
                   } catch (SQLException ex) {
                         ex.printStackTrace(System.out);
                   }
@@ -97,21 +106,21 @@ public class UsuarioDAO {
             return registros;
       }
 
-      public int eliminar(Usuario unUsuario) {
+      public int eliminar(Usuario unUsuario) throws SQLException {
             Connection conn = null;
             PreparedStatement stmt = null;
             int registros = 0;
             try {
-                  conn = getConnection();
+                  conn = (this.conexionTransaction != null) ? this.conexionTransaction : getConnection();
                   stmt = conn.prepareStatement(SQL_DELETE);
                   stmt.setInt(1, unUsuario.getIdUsuario());
                   stmt.executeUpdate();
-            } catch (SQLException ex) {
-                  ex.printStackTrace(System.out);
             } finally {
                   try {
-                        close(conn);
                         close(stmt);
+                        if (this.conexionTransaction == null) {
+                              close(conn);
+                        }
                   } catch (SQLException ex) {
                         ex.printStackTrace(System.out);
                   }
@@ -124,15 +133,17 @@ public class UsuarioDAO {
             PreparedStatement stmt = null;
             int registros = 0;
             try {
-                  conn = getConnection();
+                  conn = (this.conexionTransaction != null) ? this.conexionTransaction : getConnection();
                   stmt = conn.prepareStatement(SQL_TRUNCATE);
                   registros = stmt.executeUpdate();
             } catch (SQLException ex) {
                   ex.printStackTrace(System.out);
             } finally {
                   try {
-                        close(conn);
                         close(stmt);
+                        if (this.conexionTransaction == null) {
+                              close(conn);
+                        }
                   } catch (SQLException ex) {
                         ex.printStackTrace(System.out);
                   }

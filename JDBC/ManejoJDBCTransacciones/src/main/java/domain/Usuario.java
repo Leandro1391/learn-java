@@ -28,7 +28,7 @@ public class Usuario {
             return this.idUsuario;
       }
 
-      public void setId_usuario(int idUsuario) {
+      public void setIdUsuario(int idUsuario) {
             this.idUsuario = idUsuario;
       }
 

@@ -33,7 +33,7 @@ public class PersonaDAO {
             List<Persona> personas = new ArrayList<>();
 
             try {
-                  conn = (this.conexionTransaccional != null) ? this.conexionTransaccional : getConnection();
+                  conn = getConnection();
                   stmt = conn.prepareStatement(SQL_SELECT);
                   rs = stmt.executeQuery();
 
@@ -55,9 +55,7 @@ public class PersonaDAO {
                         //Conexion es una clase estatica - los argumentos son los objetos declarados mas arriba
                         close(rs);
                         close(stmt);
-                        if (this.conexionTransaccional == null) {
-                              close(conn);
-                        }
+                        close(conn);
                   } catch (SQLException ex) {
                         ex.printStackTrace(System.out);
                   }
@@ -76,7 +74,7 @@ public class PersonaDAO {
                   stmt.setString(2, persona.getApellido());
                   stmt.setString(3, persona.getEmail());
                   stmt.setString(4, persona.getTelefono());
-                  
+
                   //La sentencia executeUpdate actualiza la tabla de la bd y devuelve la filas afectadas se puede usar tanto para DELETE, UPDATE e INSERT
                   System.out.println("Ejecutamos la transaccion INSERT: " + SQL_INSERT);
                   registros = stmt.executeUpdate();
@@ -106,7 +104,7 @@ public class PersonaDAO {
                   stmt.setString(3, persona.getEmail());
                   stmt.setString(4, persona.getTelefono());
                   stmt.setInt(5, persona.getIdPersona());
-                  
+
                   System.out.println("Ejecutamos la transaccion UPDATE: " + SQL_UPDATE);
                   registros = stmt.executeUpdate();
                   System.out.println("Registros afectados: " + registros);

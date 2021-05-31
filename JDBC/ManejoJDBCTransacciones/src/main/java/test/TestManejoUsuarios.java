@@ -1,33 +1,59 @@
 package test;
 
 import datos.UsuarioDAO;
+import datos.Conexion;
 import domain.Usuario;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class TestManejoUsuarios {
 
       public static void main(String[] args) {
 
-            //Usuario test
-            UsuarioDAO usuarioDao = new UsuarioDAO();
+            //Transacciones con Usuarios
+            Connection conn = null;
 
-            Usuario usuarioNuevo = new Usuario("Charles", "3214");
-            usuarioDao.insertar(usuarioNuevo);
+            try {
+                  conn = Conexion.getConnection();
+                  if (conn.getAutoCommit()) {
+                        conn.setAutoCommit(false);
+                  }
 
-            Usuario usuarioNuevo1 = new Usuario("Dimitri", "8796");
-            usuarioDao.insertar(usuarioNuevo1);
+                  UsuarioDAO usuarioTransaction = new UsuarioDAO(conn);
 
-            Usuario actualizarUsuario = new Usuario(1, "Vasili", "222222");
-            usuarioDao.actualizar(actualizarUsuario);
+                  //Insert
+                  Usuario insertarUsuario = new Usuario();
+                  insertarUsuario.setUsuario("Paplopopulus");
+                  insertarUsuario.setPassword("ueueuwisjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
-            Usuario eliminarUsuario = new Usuario(3);
-            usuarioDao.eliminar(eliminarUsuario);
+                  usuarioTransaction.insertar(insertarUsuario);
 
-//            usuarioDao.truncate();
+                  //Update
+                  Usuario actualizarUsuario = new Usuario();
+                  actualizarUsuario.setIdUsuario(7);
+                  actualizarUsuario.setUsuario("Federer2");
+                  actualizarUsuario.setPassword("opaieu434");
 
-            List<Usuario> listaUsuarios = usuarioDao.seleccionar();
-            listaUsuarios.forEach(usuario -> System.out.println("usuario = " + usuario));
+                  usuarioTransaction.actualizar(actualizarUsuario);
 
+                  //Delete
+                  Usuario eliminarUsuario = new Usuario();
+                  eliminarUsuario.setIdUsuario(5);
+                  
+                  usuarioTransaction.eliminar(eliminarUsuario);
+
+                  conn.commit();
+                  System.out.println("Se ha realizado la confirmacion de la transaccion");
+
+            } catch (SQLException ex) {
+                  ex.printStackTrace(System.out);
+                  System.out.println("Se ha revertido la transaccion");
+                  try {
+                        //Si falla una de las transacciones se realiza un rollback de todo
+                        conn.rollback();
+                  } catch (SQLException ex1) {
+                        ex1.printStackTrace(System.out);
+                  }
+            }
       }
-
 }
