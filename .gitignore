@@ -71,3 +71,5 @@
 /JDBC/ManejoJDBCCapaDeDatos/src/main/java/test/TestMySqlJDBC.java
 /JDBC/ManejoJDBCTransacciones/src/main/java/datos/Conexion.java
 /JDBC/ManejoJDBCTransacciones/src/main/java/test/TestMySqlJDBC.java
+/JDBC/ManejoJDBCPoolConexiones/target/
+JDBC/ManejoJDBCPoolConexiones/src/main/java/datos/Conexion.java
