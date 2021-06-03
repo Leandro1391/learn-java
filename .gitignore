@@ -64,5 +64,5 @@
 /JDBC/ManejoJDBC/target/
 /JDBC/ManejoJDBCTransacciones/target/
 /JDBC/ManejoJDBCCapaDeDatos/target/
-TestMySqlJDBC.java
-Conexion.java
+/TestMySqlJDBC.java
+/Conexion.java
